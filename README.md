@@ -1,4 +1,4 @@
-# Code_Prototipe
+# Code_Prototype
 <p>
 Our objective with this project is to encourage avid learners to learn a different
 programming language through a highly accessible and engaging social web
