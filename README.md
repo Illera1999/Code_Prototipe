@@ -26,3 +26,20 @@ expert lessons package. Registered users will show up in the ranking, and their
 progress in basic lessons is saved. And non-registered users are considered to be
 those who enter the application for the first time or who haven't created an
 account yet.
+
+# DataBase
+We will create a non-relational database. Composed by 3 tables: Users, C
+
+## Users
+### Attributes
+* id (primaryKey): String
+    * The id is maked by Authentication of Firebase
+* userName: String
+* gmail: String
+* isPremium: Boolean
+## Course
+### Attributes
+* id (primaryKey): String
+    * The id is maked by the "Software Programming"
+* name: String
+* programmingLanguage: String
