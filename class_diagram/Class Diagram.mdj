@@ -399,7 +399,7 @@
 											"top": 278,
 											"width": 285.10498046875,
 											"height": 13,
-											"text": "«unique»-id: int",
+											"text": "«unique»-id: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -664,7 +664,7 @@
 											"top": 262,
 											"width": 246,
 											"height": 13,
-											"text": "«unique»-id: int",
+											"text": "«unique»-id: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -945,7 +945,7 @@
 											"top": 454,
 											"width": 260.609375,
 											"height": 13,
-											"text": "«unique»-id: int",
+											"text": "«unique»-id: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1242,7 +1242,7 @@
 											"top": 430,
 											"width": 285.10498046875,
 											"height": 13,
-											"text": "«unique»-id: int",
+											"text": "«unique»-id: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3886,7 +3886,7 @@
 											"top": 678,
 											"width": 258.197265625,
 											"height": 13,
-											"text": "-nameMap: TrieMap = <UserRegisterd, int>",
+											"text": "-nameMap: TrieMap = <String, int>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -4379,7 +4379,7 @@
 							"name": "id",
 							"stereotype": "unique",
 							"visibility": "private",
-							"type": "int"
+							"type": "String"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4524,7 +4524,7 @@
 							"name": "id",
 							"stereotype": "unique",
 							"visibility": "private",
-							"type": "int"
+							"type": "String"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4711,7 +4711,7 @@
 							"name": "id",
 							"stereotype": "unique",
 							"visibility": "private",
-							"type": "int"
+							"type": "String"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4862,7 +4862,7 @@
 							"name": "id",
 							"stereotype": "unique",
 							"visibility": "private",
-							"type": "int"
+							"type": "String"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5081,7 +5081,7 @@
 							"name": "nameMap",
 							"visibility": "private",
 							"type": "TrieMap",
-							"defaultValue": "<UserRegisterd, int>"
+							"defaultValue": "<String, int>"
 						}
 					]
 				}
