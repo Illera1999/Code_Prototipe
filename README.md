@@ -40,6 +40,28 @@ We will create a non-relational database. Composed by 3 tables: Users, C
 ## Course
 ### Attributes
 * id (primaryKey): String
-    * The id is maked by the "Software Programming"
+    * The id is maked by our self
+* userName: String
 * name: String
 * programmingLanguage: String
+* description: String
+* challenges: Challenges[]
+    * The Challenges contains information of the users and his score:
+        * id: String
+            * The id is maked by our self
+        * title: String
+        * description: String
+        * executationTime: Time
+        * durationTime: Time
+        * score: int = executationTime + durationTime
+        * stage: String
+## Subscription
+### Atributes
+* id (primaryKey): String
+    * The id is maked by FireStore
+* user: String
+* course: String
+* isActivate: boolean
+* startDate: Time
+* price: float
+
