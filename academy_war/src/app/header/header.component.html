@@ -8,11 +8,11 @@
     </section>
 
     <section class="buttons">
-        <button class="login-btn full-rounded" routerLink="/login" routerLinkActive="activebutton">
-            <span>Inicio de sesión</span>
+        <button class="login-btn full-rounded" (click)="openLogin()">
+            <span>Login</span>
         </button>
-        <button class="login-btn" routerLink="/register" routerLinkActive="activebutton">
-            <span>Registrarse</span>
+        <button class="login-btn" (click)="openRegister()">
+            <span>Register</span>
         </button>
     </section>
 </header>
