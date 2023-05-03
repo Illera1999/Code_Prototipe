@@ -1,0 +1,85 @@
+@import "../../styles.scss";
+
+.bg {
+    background-color: $black;
+    overflow: hidden;
+    width: 600px;
+    height: 500px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+h2 {
+    color: $light-golden;
+    font-size: 2.5em;
+}
+
+form {
+    margin-top: -50px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    label {
+        position: relative;
+
+        .input {
+            padding: 10px 10px 20px 10px;
+            min-width: 270px;
+            border: 5px solid $gray;
+            border-radius: 10px;
+            font-size: medium;
+            outline: 0;
+
+            &+span {
+                position: absolute;
+                left: 20px;
+                top: 20px;
+                color: $gray;
+                font-size: 1em;
+                cursor: text;
+                transition: 0.3s ease;
+            }
+
+            &:focus+span,
+            &:valid+span {
+                top: 35px;
+                left: 10px;
+                font-size: 0.7em;
+                font-weight: 600;
+            }
+
+            &:focus {
+                &:invalid {
+                    border-color: $red;
+
+                    &+span {
+                        color: $red;
+                    }
+                }
+
+                &:valid {
+                    border-color: $green;
+
+                    &+span {
+                        color: $green;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.message {
+    color: $gray;
+    font-size: 14px;
+    margin-left: 25%;
+    margin-top: 25%;
+}
+
+.submit-btn {
+    width: 100% !important;
+    border-radius: 10px !important;
+}
