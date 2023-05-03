@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import './styles/_colors';
+@import url('https://fonts.googleapis.com/css2?family=Carlito&family=Poppins:ital,wght@1,200&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Carlito', sans-serif;
+
+}
