@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataUserFireService } from '../services/data-user-fire.service';
 
 @Component({
   selector: 'app-register',
