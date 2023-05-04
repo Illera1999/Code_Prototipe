@@ -1,0 +1,49 @@
+@import "../../styles.scss";
+/* Apartado de errores */
+
+input.ng-invalid:focus:not(.ng-untouched),
+input.ng-invalid:hover:not(.ng-untouched),
+input.ng-invalid:not(.ng-untouched) {
+    border-color: $red;
+}
+
+input.ng-invalid:focus:not(.ng-untouched),
+input.ng-invalid:hover:not(.ng-untouched) {
+    background-color: whitesmoke;
+    border-color: $red;
+}
+
+.error-msg span,
+.error-msg {
+    color: $red;
+    background-color: rgba($red, .25);
+}
+
+input.ng-valid:focus,
+input.ng-valid:hover,
+input.ng-valid {
+    background-color: whitesmoke;
+    border-color: $green;
+    color: $green;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    filter: contrast(.5);
+}
+
+input.ng-invalid {
+    border-color: $red;
+
+    &+span {
+        color: $red;
+    }
+}
+
+input.ng-valid {
+    border-color: $green;
+
+    &+span {
+        color: $green;
+    }
+}
