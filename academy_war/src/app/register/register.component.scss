@@ -44,29 +44,12 @@ form {
             }
 
             &:focus+span,
-            &:valid+span {
+            &:valid+span,
+            &:invalid+span {
                 top: 35px;
                 left: 10px;
                 font-size: 0.7em;
                 font-weight: 600;
-            }
-
-            &:focus {
-                &:invalid {
-                    border-color: $red;
-
-                    &+span {
-                        color: $red;
-                    }
-                }
-
-                &:valid {
-                    border-color: $green;
-
-                    &+span {
-                        color: $green;
-                    }
-                }
             }
         }
     }

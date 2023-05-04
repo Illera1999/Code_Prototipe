@@ -1,28 +1,77 @@
 <div class="bg">
     <h2>Register to start learning</h2>
-    <form class="form">
+    <form class="form" #form="ngForm" (ngSubmit)="onRegister(form.controls)">
         <label>
-            <input class="input" type="mail" placeholder="" required>
-            <span>Email</span>
+            <input class="input" type="mail" placeholder="" required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`
+            {|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" #mail=ngModel ngModel
+                name="mail">
+            <span>Email
+                <!-- Errores de correo -->
+                <span *ngIf="(mail.dirty || mail.touched) && mail.invalid" class="error-msg">
+                    <span *ngIf="mail.errors?.['required']">
+                        - Please write your e-mail.
+                    </span>
+                    <span *ngIf="mail.errors?.['pattern']">
+                        - Not adequate e-mail.
+                    </span>
+                </span>
+                <!-- Fin errores correo --></span>
         </label>
 
         <label>
-            <input class="input" placeholder="" type="text" required>
-            <span>Username</span>
+            <input class="input" placeholder="" type="text" placeholder="" #name=ngModel ngModel name="name" required
+                pattern="^([a-zA-Z0-9]+ ){0,3}[a-zA-Z0-9 ]+$">
+            <span>Username
+                <!-- Errores de contraseña -->
+                <span *ngIf="(name.dirty || name.touched) && name.invalid" class="error-msg">
+                    <span *ngIf="name.errors?.['required']">
+                        - Please write your username.
+                    </span>
+                    <span *ngIf="name.errors?.['pattern']">
+                        - Only alphanumericals.
+                    </span>
+                </span>
+                <!-- Fin errores contraseña -->
+            </span>
         </label>
 
         <label>
-            <input class="input" placeholder="" type="password" required>
-            <span>Password</span>
+            <input class="input" placeholder="" type="password" #password=ngModel ngModel name="password" required
+                pattern="^[A-Za-z0-9,._-]{6,}$">
+            <span>Password
+                <!-- Errores de contraseña -->
+                <span *ngIf="(password.dirty || password.touched) && password.invalid" class="error-msg">
+                    <span *ngIf="password.errors?.['required']">
+                        - Please write your password.
+                    </span>
+                    <span *ngIf="password.errors?.['pattern']">
+                        - Only use alphanumericals and ",._-".
+                    </span>
+                </span>
+                <!-- Fin errores contraseña -->
+            </span>
         </label>
 
         <label>
-            <input class="input" placeholder="" type="password" required>
-            <span>Repeat password</span>
+            <input class="input" placeholder="" type="password" #rpass=ngModel ngModel name="rpass" required
+                pattern="{{password.value}}">
+            <span>
+                Repeat password
+                <!-- Errores de contraseña -->
+                <span *ngIf="(rpass.dirty || rpass.touched) && rpass.invalid" class="error-msg">
+                    <span *ngIf="rpass.errors?.['required']">
+                        Please repeat password.
+                    </span>
+                    <span *ngIf="rpass.errors?.['pattern']">
+                        Password should match.
+                    </span>
+                </span>
+                <!-- Fin errores contraseña -->
+            </span>
         </label>
-        <button class="login-btn submit-btn">
+        <button class="login-btn submit-btn" [disabled]="form.invalid">
             <span>Register</span>
         </button>
-        
+
     </form>
 </div>
