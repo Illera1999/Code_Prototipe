@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DataUserFireService } from '../services/data-user-fire.service';
+import { AuthService } from '../services/auth.service';
+import { ModalService } from '../services/modal.service';
 
 @Component({
   selector: 'app-register',
@@ -7,8 +8,16 @@ import { DataUserFireService } from '../services/data-user-fire.service';
   styleUrls: ['../header/header.component.scss', './register.component.scss', './validations.scss']
 })
 export class RegisterComponent {
+  constructor(private auth: AuthService, private modal: ModalService) {
+
+  }
   onRegister(data: any) {
     console.log(data.mail.value, data.name.value, data.password.value);
-
+    this.auth.register(
+      data.mail.value,
+      data.name.value,
+      data.password.value
+    );
+    this.modal.closeDialog();
   }
 }

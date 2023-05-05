@@ -9,7 +9,11 @@
         </form>
     </section>
 
-    <section class="buttons">
+    <section class="buttons" *ngIf="user !== undefined">
+        <span>user.id</span>
+    </section>
+
+    <section class="buttons" *ngIf="user === undefined">
         <button class="login-btn full-rounded" (click)="openLogin()">
             <span>Login</span>
         </button>

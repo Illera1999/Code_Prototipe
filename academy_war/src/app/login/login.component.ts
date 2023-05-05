@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ModalService } from '../services/modal.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -6,8 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['../header/header.component.scss', '../register/register.component.scss', '../register/validations.scss']
 })
 export class LoginComponent {
-  onLogin(thing: any) {
-    console.log(thing.mail.value, thing.password.value);
-  }
 
+  constructor(private auth: AuthService, private modal: ModalService) {
+
+  }
+  onLogin(data: any) {
+    console.log(data.mail.value, data.password.value);
+    this.modal.closeDialog();
+  }
 }

@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { initializeApp } from 'firebase/app';
 import { environment } from 'src/environments/environment';
+import { DataUserFireService } from './data-user-fire.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,10 +11,11 @@ export class AuthService {
 
   private static app: any;
 
-  constructor(private auth: AngularFireAuth, private router: Router) { }
+  constructor(private auth: AngularFireAuth, private router: Router,
+    private db: DataUserFireService) { }
 
   public static getApp() {
-    if (this.app == undefined)
+    if (!this.app)
       this.app = initializeApp(environment.firebaseConfig);
     return this.app
   }
@@ -26,12 +28,19 @@ export class AuthService {
       });
   }
 
-  async register(email: string, password: string) {
+  async register(email: string, username: string, password: string) {
     await this.auth.createUserWithEmailAndPassword(email, password)
-      .then((value: any) => { console.log("Nice, it worked! \n", value); })
+      .then((value: any) => {
+        console.log("Nice, it worked! \n", value);
+        this.createUserInDB(email, username);
+      })
       .catch(err => {
         console.log('Something went wrong: ', err.message);
       });
+  }
+
+  private async createUserInDB(email: string, username: string) {
+    await this.db.createUserData(email, username);
   }
 
   async logout() {
