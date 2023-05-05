@@ -8,10 +8,14 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  public static app = initializeApp(environment.firebaseConfig);
+  private static app: any;
 
-  constructor(private auth: AngularFireAuth, private router: Router) {
-    console.log(auth);
+  constructor(private auth: AngularFireAuth, private router: Router) { }
+
+  public static getApp() {
+    if (this.app == undefined)
+      this.app = initializeApp(environment.firebaseConfig);
+    return this.app
   }
 
   async login(email: string, password: string) {
