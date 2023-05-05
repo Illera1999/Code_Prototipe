@@ -4,6 +4,7 @@ import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { User } from '../class/user';
 import { DataUserFireService } from '../services/data-user-fire.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ export class HeaderComponent {
 
   protected user: User | undefined;
 
-  constructor(private modal: ModalService, private db: DataUserFireService) {
+  constructor(private modal: ModalService, private auth: AuthService) {
     let temp = localStorage.getItem("user");
     if (temp) {
       let v = JSON.parse(temp)
@@ -28,5 +29,9 @@ export class HeaderComponent {
 
   openRegister() {
     this.modal.openDialog(RegisterComponent, "500px", "600px");
+  }
+
+  logout() {
+    this.auth.logout();
   }
 }

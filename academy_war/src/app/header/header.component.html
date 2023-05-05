@@ -9,8 +9,11 @@
         </form>
     </section>
 
-    <section class="buttons" *ngIf="user">
+    <section class="buttons drop" *ngIf="user">
         <span class="username">{{user.getId()}}</span>
+        <div class="dropdown" (click)="logout()">
+            Logout
+        </div>
     </section>
 
     <section class="buttons" *ngIf="!user">
