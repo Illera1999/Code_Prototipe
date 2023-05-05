@@ -95,3 +95,29 @@ button.login-btn {
     font-size: large;
     font-weight: bolder;
 }
+
+.drop:hover {
+    .dropdown {
+        visibility: visible;
+    }
+}
+
+.dropdown {
+    visibility: collapse;
+    position: absolute;
+    width: 300px;
+    padding: 20px 10px;
+    top: 75px;
+    text-align: center;
+    cursor: pointer;
+    height: fit-content;
+    background-color: rgba($black, .95);
+    border-radius: 0 0 20px 20px;
+    color: $white;
+    transition: all .3s ease;
+    font-weight: bolder;
+
+    &:hover {
+        background-color: rgba($black, .75);
+    }
+}
