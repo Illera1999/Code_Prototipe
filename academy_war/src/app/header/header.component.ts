@@ -12,21 +12,21 @@ import { DataUserFireService } from '../services/data-user-fire.service';
 })
 export class HeaderComponent {
 
-  protected user: User | undefined = this.db.getUser();
+  protected user: User | undefined;
 
-  constructor(private modal: ModalService, private db: DataUserFireService) { }
+  constructor(private modal: ModalService, private db: DataUserFireService) {
+    let temp = localStorage.getItem("user");
+    if (temp) {
+      let v = JSON.parse(temp)
+      this.user = new User(v['id'], v['username']);
+    }
+  }
 
   openLogin() {
     this.modal.openDialog(LoginComponent, "500px", "600px");
-    this.user = this.db.getUser();
-
-
   }
 
   openRegister() {
     this.modal.openDialog(RegisterComponent, "500px", "600px");
-    this.user = this.db.getUser();
-    console.log("ocurre");
   }
-
 }

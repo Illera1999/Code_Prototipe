@@ -18,7 +18,8 @@ export class DataUserFireService {
         username: username,
         isPremium: false
       }).then(() => {
-        this.user = new User(email, username);
+        localStorage.setItem("user", JSON.stringify({ id: email, username: username }))
+        window.location.reload()
       });
 
       console.log("Document written with ID: ", email);

@@ -14,6 +14,5 @@ export class LoginComponent {
   }
   onLogin(data: any) {
     console.log(data.mail.value, data.password.value);
-    this.modal.closeDialog();
   }
 }

@@ -22,7 +22,9 @@ export class AuthService {
 
   async login(email: string, password: string) {
     await this.auth.signInWithEmailAndPassword(email, password)
-      .then((value: any) => { console.log("Nice, it worked! \n", value); })
+      .then((value: any) => {
+        console.log("Nice, it worked! \n", value);
+      })
       .catch(err => {
         console.log('Something went wrong: ', err.message);
       });
