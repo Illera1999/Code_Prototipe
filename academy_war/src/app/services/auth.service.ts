@@ -48,6 +48,8 @@ export class AuthService {
   async logout() {
     await this.auth.signOut().then(() => {
       this.router.navigate(['/']);
+      localStorage.removeItem("user");
+      window.location.reload();
     });
   }
 }
