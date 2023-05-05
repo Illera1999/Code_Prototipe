@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ModalService } from '../services/modal.service';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
+import { User } from '../class/user';
+import { DataUserFireService } from '../services/data-user-fire.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +12,15 @@ import { RegisterComponent } from '../register/register.component';
 })
 export class HeaderComponent {
 
-  constructor(private modal: ModalService) { }
+  protected user: User | undefined;
+
+  constructor(private modal: ModalService, private db: DataUserFireService) {
+    let temp = localStorage.getItem("user");
+    if (temp) {
+      let v = JSON.parse(temp)
+      this.user = new User(v['id'], v['username']);
+    }
+  }
 
   openLogin() {
     this.modal.openDialog(LoginComponent, "500px", "600px");
@@ -19,5 +29,4 @@ export class HeaderComponent {
   openRegister() {
     this.modal.openDialog(RegisterComponent, "500px", "600px");
   }
-
 }
