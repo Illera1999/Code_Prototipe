@@ -33,9 +33,8 @@ We will create a non-relational database. Composed by 3 tables: Users, C
 ## Users
 ### Attributes
 * id (primaryKey): String
-    * The id is maked by Authentication of Firebase
+    * The id is the gmail and that will be unique.
 * userName: String
-* gmail: String
 * isPremium: Boolean
 ## Course
 ### Attributes
