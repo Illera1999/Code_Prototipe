@@ -27,6 +27,7 @@ export class AuthService {
 
         localStorage.setItem("user", JSON.stringify({ id: email, username:  this.db.getUser()?.getUsername}))
         window.location.reload();
+
       })
       .catch(err => {
         console.log('Something went wrong: ', err.message);
