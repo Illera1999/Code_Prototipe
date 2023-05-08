@@ -1,6 +1,7 @@
 import { Challenge } from "./challenges";
 import { Lesson } from "./lesson";
 import { User } from "./user";
+import { UserList } from "./userList";
 
 export class Course {
     private id: string = "";
@@ -9,9 +10,11 @@ export class Course {
     private programmingLanguage: string = "";
     private challenges: Challenge[] = [];
     private lessons: Lesson[] = [];
-    private users: User[] = [];
+    private users: UserList[] = [];
 
-    constructor(id: string, name: string, description: string, porgrammingLanguage: string, lessons: Lesson[], challenges: Challenge[], users: User[]) {
+    constructor(id: string, name: string, description: string,
+        porgrammingLanguage: string, lessons: Lesson[],
+        challenges: Challenge[], users: []) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -34,16 +37,21 @@ export class Course {
     public setDescription(id: string) { this.description = id }
     public setProgrammingLanguage(id: string) { this.programmingLanguage = id }
 
-    public addChallenge(challenge: Challenge) {
-        this.challenges.push(challenge)
-        //Y añadirlo en el servicio de la BBDD
+    public addChallenge(challenge: Challenge) { this.challenges.push(challenge) }
+    public addLesson(lesson: Lesson) { this.lessons.push(lesson) }
+    public addUser(user: User) {
+        let lessonsComplete = [];
+        for (let i = 0; i <= this.lessons.length; i++) lessonsComplete.push(false);
+        let challengesComplete = [];
+        for (let i = 0; i <= this.challenges.length; i++) challengesComplete.push(false);
+        this.users.push(new UserList(user.getUsername(), lessonsComplete, challengesComplete))
     }
 
-    public addLesson(lesson: Lesson) {
-        this.lessons.push(lesson)
-        //Y añadirlo en el servicio de la BBDD
+    public hasAccess(user: User) {
+        for (let u of this.users) {
+            if (u.isSameUser(user.getUsername())) return true;
+        }
+        return false;
     }
-
-    public hasAccess(user: User) { return (this.users.indexOf(user) != -1) }
 
 }

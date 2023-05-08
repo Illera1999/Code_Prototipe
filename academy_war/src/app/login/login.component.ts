@@ -14,5 +14,8 @@ export class LoginComponent {
   }
   onLogin(data: any) {
     console.log(data.mail.value, data.password.value);
+    this.auth.login(
+      data.mail.value, 
+      data.password.value);
   }
 }

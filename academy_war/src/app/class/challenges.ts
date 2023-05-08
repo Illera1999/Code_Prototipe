@@ -25,5 +25,11 @@ export class Challenge {
     public getScore() { return this.score }
     public getStage() { return this.stage }
 
-
+    public setId(id: string) { this.id = id }
+    public setTitle(title: string) { this.title = title }
+    public setDescription(description: string) { this.description = description }
+    public setExecutionTime(executionTime: Date) { this.executionTime = executionTime; }
+    public setDurationTime(durationTime: Date) { this.durationTime = durationTime }
+    public setScore(score: number) { this.score = score }
+    public setStage(stage: Stage) { this.stage = stage }
 }

@@ -20,7 +20,7 @@ export class HeaderComponent {
     let temp = localStorage.getItem("user");
     if (temp) {
       let v = JSON.parse(temp)
-      this.user = new User(v['id'], v['username']);
+      this.user = new User(v['id'], v['username'], [], []);
     }
     db.setAllCourse().then((cursos)=>{
       console.log(cursos);
