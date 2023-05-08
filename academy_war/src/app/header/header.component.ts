@@ -22,7 +22,7 @@ export class HeaderComponent {
       let v = JSON.parse(temp)
       this.user = new User(v['id'], v['username'], [], []);
     }
-    db.setAllCourse().then((cursos)=>{
+    db.setAllCourse().then((cursos: Course[])=>{
       console.log(cursos);
       
 

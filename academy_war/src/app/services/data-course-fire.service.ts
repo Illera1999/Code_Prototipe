@@ -11,24 +11,30 @@ export class DataCourseFireService {
 
   private db = getFirestore(AuthService.getApp());
   private courses: Course[] = [];
+  private lessons: Lesson[] = [];
 
   async setAllCourse(){
     try{
       const q = query(collection(this.db,"course"));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
+        let lessons = doc.data()["lessons"];
+        lessons.forEach((element: any) => {
+          const auxe = new Lesson(element);
+          this.lessons.push(auxe)
+        });
+        
         const aux = new Course (
           doc.id,
           doc.data()["name"],
           doc.data()["description"],
           doc.data()["programmingLanguage"],
-          new Lesson(doc.data()["lessons"].id,doc.data()[""]),
+          this.lessons,
           doc.data()["challenges"],
           doc.data()["users"]);
         
         this.courses.push(aux);
 
-        ////console.log(doc.id, " => ", doc.data()["name"]);
       });
       console.log("Get collection Course");
     } catch (e) {
