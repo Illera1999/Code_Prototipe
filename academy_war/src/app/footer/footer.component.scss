@@ -1,0 +1,22 @@
+@import '../../styles.scss';
+
+.general {
+    width: 100%;
+    height: 2vh;
+    display: grid;
+    padding-bottom: 40px;
+    justify-items: center;
+}
+
+.acordeon {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.footer-text {
+    font-size: 20px;
+    color: #D7DDE8;
+}

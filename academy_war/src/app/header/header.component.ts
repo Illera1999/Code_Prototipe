@@ -5,6 +5,7 @@ import { RegisterComponent } from '../register/register.component';
 import { User } from '../class/user';
 import { DataUserFireService } from '../services/data-user-fire.service';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,7 @@ export class HeaderComponent {
 
   protected user: User | undefined;
 
-  constructor(private modal: ModalService, private auth: AuthService) {
+  constructor(private modal: ModalService, private auth: AuthService, private router: Router) {
     let temp = localStorage.getItem("user");
     if (temp) {
       let v = JSON.parse(temp)
@@ -34,4 +35,9 @@ export class HeaderComponent {
   logout() {
     this.auth.logout();
   }
+
+  openCourse() {
+    this.router.navigate(['/app-course-main']);
+  }
+
 }
