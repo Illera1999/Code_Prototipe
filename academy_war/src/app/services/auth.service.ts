@@ -24,7 +24,8 @@ export class AuthService {
     await this.auth.signInWithEmailAndPassword(email, password)
       .then((value: any) => {
         console.log("Nice, it worked! \n", value);
-        localStorage.setItem("user", JSON.stringify({ id: email, username: this.db.getUser()?.getUsername }))
+
+        localStorage.setItem("user", JSON.stringify({ id: email, username:  this.db.getUser()?.getUsername}))
         window.location.reload();
 
       })
