@@ -22,3 +22,7 @@ h2 {
 .displayed {
     display: block;
 }
+
+span, h2{
+    user-select: none;
+}

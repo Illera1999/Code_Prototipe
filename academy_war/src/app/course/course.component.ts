@@ -10,9 +10,11 @@ import { DataCourseFireService } from '../services/data-course-fire.service';
 export class CourseComponent {
   course: Course[] = new Array(1);
 
-  showDescription: boolean = true;
-  showChallenges: boolean = true;
-  showLessons: boolean = true;
+  show: vMenu = {
+    challenges: false,
+    description: false,
+    lessons: false
+  };
 
   constructor(private db: DataCourseFireService) {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
@@ -23,4 +25,13 @@ export class CourseComponent {
       })
   }
 
+  getView(e:any){
+   this.show=e;
+    
+  }
+}
+export interface vMenu{
+  description: boolean,
+  lessons: boolean,
+  challenges: boolean
 }

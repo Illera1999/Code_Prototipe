@@ -1,11 +1,11 @@
 <main class="general">
     <h2>{{course[0]?.getName()}}</h2>
     <section class="section-container">
-        <app-dropdown-challenges *ngIf="true"></app-dropdown-challenges>
-        <app-dropdown-lessons *ngIf="false"></app-dropdown-lessons>
+        <app-dropdown-challenges *ngIf="show.challenges"></app-dropdown-challenges>
+        <app-dropdown-lessons *ngIf="show.lessons"></app-dropdown-lessons>
     </section>
 
     <aside class="aside-container">
-        <app-course-menu></app-course-menu>
+        <app-course-menu (miEvento)="getView($event)"></app-course-menu>
     </aside>
 </main>

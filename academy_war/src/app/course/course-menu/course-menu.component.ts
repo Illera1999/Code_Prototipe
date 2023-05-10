@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-course-menu',
@@ -7,29 +7,42 @@ import { Component } from '@angular/core';
 })
 export class CourseMenuComponent {
 
-  public vDescription: boolean = true;
-  public vLessons: boolean = false;
-  public vChallenges: boolean = false;
+  @Output() miEvento = new EventEmitter<vMenu>();
+/* 
+  @Output() public vMenu = {
+    "description":false,
+    "lessons":false,
+    "challenges":false
+  };
+
+ */
+
+  var: vMenu = {
+    challenges: false,
+    description: false,
+    lessons: false
+  };
 
 
   visualizar(dato: string){
-    this.vDescription = false;
-    this.vLessons = false;
-    this.vChallenges = false;
+    this.var.description = false;  
+    this.var.lessons = false;  
+    this.var.challenges = false;  
     switch(dato) {
       case "Lessons":
-        this.vLessons = true;
+        this.var.lessons = true;
         this.isActive(dato);
         break;
       case "Challenges":
-        this.vChallenges = true;
+        this.var.challenges = true;
         this.isActive(dato) 
         break;
       default:
-        this.vDescription = true;
+        this.var.description = true;
         this.isActive(dato) 
         break;
     }  
+    this.miEvento.emit(this.var)
   }
 
   public isActive(id: string){
@@ -42,4 +55,10 @@ export class CourseMenuComponent {
   }
   
 
+}
+
+export interface vMenu{
+  description: boolean,
+  lessons: boolean,
+  challenges: boolean
 }
