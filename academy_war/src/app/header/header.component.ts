@@ -5,6 +5,8 @@ import { RegisterComponent } from '../register/register.component';
 import { User } from '../class/user';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { Course } from '../class/course';
+import { DataCourseFireService } from '../services/data-course-fire.service';
 
 @Component({
   selector: 'app-header',
