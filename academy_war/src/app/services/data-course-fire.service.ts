@@ -5,9 +5,6 @@ import { Course } from '../class/course';
 import { Lesson } from '../class/lesson'; 
 import { Challenge } from '../class/challenges';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class DataCourseFireService {
 
   private db = getFirestore(AuthService.getApp());
@@ -26,7 +23,7 @@ export class DataCourseFireService {
           this.lessons.push(auxe)
         });
 
-        let challenges = doc.date()["lessons"];
+        let challenges = doc.data()["challenges"];
         challenges.forEach((element: any) => {
           const temp = new Challenge(element);
           this.challenges.push(temp)
@@ -38,7 +35,7 @@ export class DataCourseFireService {
           doc.data()["description"],
           doc.data()["programmingLanguage"],
           this.lessons,
-          doc.data()["challenges"],
+          this.challenges,
           doc.data()["users"]);
         
         this.courses.push(aux);
