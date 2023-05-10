@@ -20,7 +20,6 @@ export class CourseComponent {
     db.getParticularCourse(course || "")
       .then((c => {
         console.log(c);
-
       }));
   }
 
