@@ -18,13 +18,9 @@ export class CourseComponent {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
     let v: Course;
     db.getParticularCourse(courseUrl || "")
-      .then((data: any) => {
-        v = new Course(
-          data.id, data.name, data.description,
-          data.programmingLanguage, data.lessons,
-          data.challenges, data.users
-        );
-      }).then(() => { this.course[0] = v; });
+      .then((data: Course | null) => {
+        if (data != null) this.course[0] = data;
+      })
   }
 
 }
