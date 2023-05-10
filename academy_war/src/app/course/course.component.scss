@@ -1,0 +1,26 @@
+@import '../../styles.scss';
+
+.general {
+    color: white;
+    display: grid;
+    grid-template:
+        'title title title titile aside aside aside'
+        'title title title titile aside aside aside'
+        'section section section section aside aside aside'
+        'section section section section aside aside aside'
+        'section section section section aside aside aside'
+        'section section section section aside aside aside'
+        'section section section section aside aside aside'
+}
+
+h2 {
+    grid-area: title;
+}
+
+.section-container {
+    grid-area: section;
+}
+
+.aside-container {
+    grid-area: aside;
+}
