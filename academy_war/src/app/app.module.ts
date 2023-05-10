@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AppCourseMainComponent } from './app-course-main/app-course-main.component';
+import { LessonComponent } from './lesson/lesson.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AppCourseMainComponent } from './app-course-main/app-course-main.compon
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    AppCourseMainComponent
+    AppCourseMainComponent,
+    LessonComponent
   ],
   imports: [
     BrowserModule,
