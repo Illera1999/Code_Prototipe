@@ -15,6 +15,10 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { CourseComponent } from './course/course.component';
+import { CourseMenuComponent } from './course/course-menu/course-menu.component';
+import { DropdownLessonsComponent } from './course/dropdown-lessons/dropdown-lessons.component';
+import { DropdownChallengesComponent } from './course/dropdown-challenges/dropdown-challenges.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    CourseComponent,
+    CourseMenuComponent,
+    DropdownLessonsComponent,
+    DropdownChallengesComponent
   ],
   imports: [
     BrowserModule,

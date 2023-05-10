@@ -1,0 +1,28 @@
+@import "../../styles.scss";
+
+
+.container {
+    width: 100%;
+    height: fit-content;
+    background-color: $black;
+}
+
+h2 {
+    padding: 25px;
+}
+
+.dropdown-content {
+    background-color: $gray;
+    height: fit-content;
+    padding: 16px;
+    display: none;
+    user-select: none;
+}
+
+.displayed {
+    display: block;
+}
+
+span, h2{
+    user-select: none;
+}

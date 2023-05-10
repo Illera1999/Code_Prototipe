@@ -6,8 +6,8 @@ export class Lesson {
     private stage: String;
     private userCompleted: String[];
 
-    constructor(datos: any){
-    
+    constructor(datos: any) {
+
         let data = datos.datos
         this.userCompleted = data.usersCompleted;
         this.id = data.id

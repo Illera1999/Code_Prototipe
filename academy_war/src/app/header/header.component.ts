@@ -6,6 +6,7 @@ import { User } from '../class/user';
 import { AuthService } from '../services/auth.service';
 import { DataCourseFireService } from '../services/data-course-fire.service';
 import { Course } from '../class/course';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,17 +17,12 @@ export class HeaderComponent {
 
   protected user: User | undefined;
 
-  constructor(private modal: ModalService, private auth: AuthService, private db: DataCourseFireService ) {
+  constructor(private modal: ModalService, private auth: AuthService, private router: Router) {
     let temp = localStorage.getItem("user");
     if (temp) {
       let v = JSON.parse(temp)
       this.user = new User(v['id'], v['username'], [], []);
     }
-    db.setAllCourse().then((cursos: Course[])=>{
-      console.log(cursos);
-      
-
-    })
   }
 
   openLogin() {
@@ -40,4 +36,9 @@ export class HeaderComponent {
   logout() {
     this.auth.logout();
   }
+
+  openCourse() {
+    this.router.navigate(['/app-course-main']);
+  }
+
 }
