@@ -3,8 +3,9 @@ import { ModalService } from '../services/modal.service';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { User } from '../class/user';
-import { DataUserFireService } from '../services/data-user-fire.service';
 import { AuthService } from '../services/auth.service';
+import { DataCourseFireService } from '../services/data-course-fire.service';
+import { Course } from '../class/course';
 import { Router } from '@angular/router';
 import { DataCourseFireService } from '../services/data-course-fire.service';
 import { Course } from '../class/course';
@@ -18,12 +19,17 @@ export class HeaderComponent {
 
   protected user: User | undefined;
 
-  constructor(private modal: ModalService, private auth: AuthService, private router: Router, private db: DataCourseFireService) {
+  constructor(private modal: ModalService, private auth: AuthService, private db: DataCourseFireService, private db: DataCourseFireService ) {
     let temp = localStorage.getItem("user");
     if (temp) {
       let v = JSON.parse(temp)
-      this.user = new User(v['id'], v['username']);
+      this.user = new User(v['id'], v['username'], [], []);
     }
+    db.setAllCourse().then((cursos: Course[])=>{
+      console.log(cursos);
+      
+
+    })
   }
 
   openLogin() {
