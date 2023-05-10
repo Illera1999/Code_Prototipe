@@ -4,8 +4,6 @@ import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { User } from '../class/user';
 import { AuthService } from '../services/auth.service';
-import { DataCourseFireService } from '../services/data-course-fire.service';
-import { Course } from '../class/course';
 import { Router } from '@angular/router';
 import { DataCourseFireService } from '../services/data-course-fire.service';
 import { Course } from '../class/course';
@@ -19,7 +17,7 @@ export class HeaderComponent {
 
   protected user: User | undefined;
 
-  constructor(private modal: ModalService, private auth: AuthService, private db: DataCourseFireService, private db: DataCourseFireService ) {
+  constructor(private modal: ModalService, private auth: AuthService, private db: DataCourseFireService, private router:Router) {
     let temp = localStorage.getItem("user");
     if (temp) {
       let v = JSON.parse(temp)
