@@ -15,8 +15,13 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+<<<<<<< HEAD
 import { AppCourseMainComponent } from './app-course-main/app-course-main.component';
 import { LessonComponent } from './lesson/lesson.component';
+=======
+import { CourseComponent } from './course/course.component';
+import { CourseMenuComponent } from './course/course-menu/course-menu.component';
+>>>>>>> singleCourse
 
 @NgModule({
   declarations: [
@@ -26,8 +31,13 @@ import { LessonComponent } from './lesson/lesson.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+<<<<<<< HEAD
     AppCourseMainComponent,
     LessonComponent
+=======
+    CourseComponent,
+    CourseMenuComponent
+>>>>>>> singleCourse
   ],
   imports: [
     BrowserModule,
