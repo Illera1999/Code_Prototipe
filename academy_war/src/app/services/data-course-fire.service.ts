@@ -3,6 +3,7 @@ import { collection, query, getFirestore, getDocs } from "firebase/firestore";
 import { AuthService } from './auth.service';
 import { Course } from '../class/course'; 
 import { Lesson } from '../class/lesson'; 
+import { Challenge } from '../class/challenges';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class DataCourseFireService {
   private db = getFirestore(AuthService.getApp());
   private courses: Course[] = [];
   private lessons: Lesson[] = [];
+  private challenges: Challenge[] = [];
 
   async setAllCourse(){
     try{
@@ -22,6 +24,12 @@ export class DataCourseFireService {
         lessons.forEach((element: any) => {
           const auxe = new Lesson(element);
           this.lessons.push(auxe)
+        });
+
+        let challenges = doc.date()["lessons"];
+        challenges.forEach((element: any) => {
+          const temp = new Challenge(element);
+          this.challenges.push(temp)
         });
         
         const aux = new Course (

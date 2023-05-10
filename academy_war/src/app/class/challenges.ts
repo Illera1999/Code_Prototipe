@@ -9,12 +9,13 @@ export class Challenge {
     private score: number = 0;
     private stage: Stage = Stage.HIGH;
 
-    constructor(id: string, title: string, description: string, score: 0, stage: Stage) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.score = score;
-        this.stage = stage;
+    constructor(datos: any) {
+        let data = datos.datos
+        this.id = data.id;
+        this.title = data.title;
+        this.description = data.description;
+        this.score = data.score;
+        this.stage = data.stage;
     }
 
     public getId() { return this.id }
