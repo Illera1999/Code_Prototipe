@@ -34,9 +34,9 @@ export class DataCourseFireService {
           doc.data()["users"]);
 
         this.courses.push(aux);
-
+        this.lessons = []
       });
-      console.log("Get collection Course");
+      console.log("Get collection Course-------------------------------------");
     } catch (e) {
       console.error("Error geting document", e);
     }
@@ -44,7 +44,7 @@ export class DataCourseFireService {
   }
 
 
-  async getParticularCourse(courseId: string) {
+  async getParticularCourse(courseId: string): Promise<Course | null> {
     let res = null;
     await this.setAllCourse().then((cursos) => {
       cursos.forEach((c) => { if (c.getId() == courseId) res = c; })
