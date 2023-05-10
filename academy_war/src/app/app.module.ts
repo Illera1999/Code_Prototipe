@@ -15,7 +15,6 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
-import { AppCourseMainComponent } from './app-course-main/app-course-main.component';
 import { CourseComponent } from './course/course.component';
 import { CourseMenuComponent } from './course/course-menu/course-menu.component';
 
@@ -27,7 +26,6 @@ import { CourseMenuComponent } from './course/course-menu/course-menu.component'
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    AppCourseMainComponent,
     CourseComponent,
     CourseMenuComponent
   ],
