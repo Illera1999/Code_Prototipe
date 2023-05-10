@@ -17,7 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { CourseComponent } from './course/course.component';
 import { CourseMenuComponent } from './course/course-menu/course-menu.component';
-import { DropdownComponent } from './dropdown/dropdown.component';
+import { DropdownComponent } from './course/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
