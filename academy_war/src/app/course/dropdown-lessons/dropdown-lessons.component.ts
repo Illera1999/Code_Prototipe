@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Course } from '../../class/course';
-import { DataCourseFireService } from '../../services/data-course-fire.service';
-import { Lesson } from '../../class/lesson';
-import { Stage } from '../../class/stage';
+import { Component } from '@angular/core';
+import { Course } from 'src/app/class/course';
+import { Lesson } from 'src/app/class/lesson';
+import { Stage } from 'src/app/class/stage';
+import { DataCourseFireService } from 'src/app/services/data-course-fire.service';
 
 @Component({
-  selector: 'app-dropdown',
-  templateUrl: './dropdown.component.html',
-  styleUrls: ['./dropdown.component.scss']
+  selector: 'app-dropdown-lessons',
+  templateUrl: './dropdown-lessons.component.html',
+  styleUrls: ['../dropdown.component.scss']
 })
-export class DropdownComponent implements OnInit {
+export class DropdownLessonsComponent {
   lowLessons: Lesson[] = [];
   medLessons: Lesson[] = [];
   hardLessons: Lesson[] = [];

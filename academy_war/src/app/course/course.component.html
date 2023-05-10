@@ -1,7 +1,8 @@
 <main class="general">
     <h2>{{course[0]?.getName()}}</h2>
     <section class="section-container">
-        <app-dropdown></app-dropdown>
+        <app-dropdown-challenges *ngIf="true"></app-dropdown-challenges>
+        <app-dropdown-lessons *ngIf="false"></app-dropdown-lessons>
     </section>
 
     <aside class="aside-container">
