@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./lesson.component.scss']
 })
 export class LessonComponent {
-
+  protected description : any;
 }
