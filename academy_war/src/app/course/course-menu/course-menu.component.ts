@@ -7,4 +7,26 @@ import { Component } from '@angular/core';
 })
 export class CourseMenuComponent {
 
+  public vDescriotion: boolean = true;
+  public vLecciones: boolean = false;
+  public vChallenges: boolean = false;
+
+
+  visualizar(dato: String){
+    this.vDescriotion = false;
+    this.vLecciones = false;
+    this.vChallenges = false;
+    switch(dato) {
+      case "Lecciones":
+        this.vLecciones = true;
+        break;
+      case "Challenges":
+        this.vChallenges = true;
+        break;
+      default:
+        this.vDescriotion = true;
+    }  
+  }
+
+
 }
