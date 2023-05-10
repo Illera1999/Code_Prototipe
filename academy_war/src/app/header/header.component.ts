@@ -17,15 +17,15 @@ export class HeaderComponent {
 
   protected user: User | undefined;
 
-  constructor(private modal: ModalService, private auth: AuthService, private db: DataCourseFireService, private router:Router) {
+  constructor(private modal: ModalService, private auth: AuthService, private db: DataCourseFireService, private router: Router) {
     let temp = localStorage.getItem("user");
     if (temp) {
       let v = JSON.parse(temp)
       this.user = new User(v['id'], v['username'], [], []);
     }
-    db.setAllCourse().then((cursos: Course[])=>{
-      console.log(cursos);
-      
+    db.setAllCourse().then((cursos: Course[]) => {
+      //console.log(cursos);
+
 
     })
   }

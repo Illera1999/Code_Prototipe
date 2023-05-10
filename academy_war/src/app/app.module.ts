@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { CourseComponent } from './course/course.component';
 import { CourseMenuComponent } from './course/course-menu/course-menu.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CourseMenuComponent } from './course/course-menu/course-menu.component'
     RegisterComponent,
     HomeComponent,
     CourseComponent,
-    CourseMenuComponent
+    CourseMenuComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,
