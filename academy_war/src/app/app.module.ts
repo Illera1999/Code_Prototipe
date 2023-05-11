@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { CourseComponent } from './course/course.component';
 import { CourseMenuComponent } from './course/course-menu/course-menu.component';
+import { LessonDropdownComponent } from './lesson/lesson-dropdown/lesson-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CourseMenuComponent } from './course/course-menu/course-menu.component'
     CourseComponent,
     LessonComponent,
     CourseComponent,
-    CourseMenuComponent
+    CourseMenuComponent,
+    LessonDropdownComponent
   ],
   imports: [
     BrowserModule,
