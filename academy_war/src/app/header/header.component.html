@@ -9,6 +9,8 @@
         </form>
     </section>
 
+    <span class="btn" (click)="openCourse()"> Courses </span>
+
     <section class="buttons drop" *ngIf="user">
         <span class="username">{{user.getId()}}</span>
         <div class="dropdown" (click)="logout()">
@@ -23,9 +25,5 @@
         <button class="login-btn" (click)="openRegister()">
             <span>Register</span>
         </button>
-        <button class="login-btn" (click)="openCourse()">
-            <span>Courses</span>
-        </button>
-
     </section>
 </header>

@@ -12,7 +12,7 @@ export class CourseComponent {
 
   show: vMenu = {
     challenges: false,
-    description: false,
+    description: true,
     lessons: false
   };
 
@@ -25,12 +25,12 @@ export class CourseComponent {
       })
   }
 
-  getView(e:any){
-   this.show=e;
-    
+  getView(e: any) {
+    this.show = e;
+
   }
 }
-export interface vMenu{
+export interface vMenu {
   description: boolean,
   lessons: boolean,
   challenges: boolean

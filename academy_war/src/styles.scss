@@ -17,6 +17,11 @@ Be sure that you only ever include this mixin once! */
     font-family: 'Poppins', 'Carlito', sans-serif;
 }
 
+body,
+html {
+    overflow-x: hidden;
+}
+
 .general {
     padding-top: 75px;
     height: calc(95vh - 75px);
