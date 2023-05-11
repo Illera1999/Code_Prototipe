@@ -34,6 +34,7 @@ import { DropdownChallengesComponent } from './course/dropdown-challenges/dropdo
     DropdownLessonsComponent,
     DropdownChallengesComponent,
     LessonComponent,
+    LessonDropdownComponent,
     CourseComponent,
     CourseMenuComponent
   ],

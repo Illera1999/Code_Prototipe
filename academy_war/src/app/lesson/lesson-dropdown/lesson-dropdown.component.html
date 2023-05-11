@@ -3,14 +3,14 @@
         <button  type="button" class="navbar-toggler" (click)="sideNavService.toggleSideNav()">
             <span class="navbar-toggler-icon">X</span>
         </button>
-        <nav class="sidebar" [ngClass]="{'hidden': sideNavService.hideSideNav }">
+        <div class="sidebar" [ngClass]="{'hidden': sideNavService.hideSideNav }">
             <button  type="button" class="navbar-toggler" (click)="sideNavService.toggleSideNav()">
                 <span class="navbar-toggler-icon">X</span>
             </button>
             <li *ngFor="let fruit of fruits">
                 {{fruit.name}}
             </li>
-        </nav>
+        </div>
 
     </div>
 </main>
