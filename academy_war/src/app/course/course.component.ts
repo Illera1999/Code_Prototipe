@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Course } from '../class/course';
 import { DataCourseFireService } from '../services/data-course-fire.service';
+import { DiffEditorModel } from 'ngx-monaco-editor';
 
 @Component({
   selector: 'app-course',
@@ -15,6 +16,9 @@ export class CourseComponent {
     description: false,
     lessons: false
   };
+
+  editorOptions = {theme: 'vs-dark', language: 'javascript'};
+  code: string= 'function x() {\nconsole.log("Hello world!");\n}';
 
   constructor(private db: DataCourseFireService) {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
