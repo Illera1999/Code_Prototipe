@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { CourseComponent } from './course/course.component';
 import { CourseMenuComponent } from './course/course-menu/course-menu.component';
+import { LessonDropdownComponent } from './lesson/lesson-dropdown/lesson-dropdown.component';
 import { DropdownLessonsComponent } from './course/dropdown-lessons/dropdown-lessons.component';
 import { DropdownChallengesComponent } from './course/dropdown-challenges/dropdown-challenges.component';
 @NgModule({
@@ -33,6 +34,9 @@ import { DropdownChallengesComponent } from './course/dropdown-challenges/dropdo
     DropdownLessonsComponent,
     DropdownChallengesComponent,
     LessonComponent,
+    LessonDropdownComponent,
+    CourseComponent,
+    CourseMenuComponent
   ],
   imports: [
     BrowserModule,

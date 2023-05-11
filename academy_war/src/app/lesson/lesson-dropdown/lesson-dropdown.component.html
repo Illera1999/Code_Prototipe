@@ -1,1 +1,17 @@
-<p>lesson-dropdown works!</p>
+<main class="body">
+    <div class="bar-and-button">
+        <button  type="button" class="navbar-toggler" (click)="sideNavService.toggleSideNav()">
+            <span class="navbar-toggler-icon">X</span>
+        </button>
+        <div class="sidebar" [ngClass]="{'hidden': sideNavService.hideSideNav }">
+            <button  type="button" class="navbar-toggler" (click)="sideNavService.toggleSideNav()">
+                <span class="navbar-toggler-icon">X</span>
+            </button>
+            <li *ngFor="let fruit of fruits">
+                {{fruit.name}}
+            </li>
+        </div>
+
+    </div>
+</main>
+        
