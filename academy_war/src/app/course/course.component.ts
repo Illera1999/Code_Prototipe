@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Course } from '../class/course';
 import { DataCourseFireService } from '../services/data-course-fire.service';
-import { DiffEditorModel } from 'ngx-monaco-editor';
+import * as monaco from 'monaco-editor';
 
 @Component({
   selector: 'app-course',
@@ -17,8 +17,8 @@ export class CourseComponent {
     lessons: false
   };
 
-  editorOptions = {theme: 'vs-dark', language: 'javascript'};
-  code: string= 'function x() {\nconsole.log("Hello world!");\n}';
+  editorOptions = { theme: 'vs-dark', language: 'c' };
+  code: string = '#include <stdio.h>\n\tint main() {\n\tprintf("Hello World!"); \n\treturn 0;\n }';
 
   constructor(private db: DataCourseFireService) {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
@@ -29,12 +29,12 @@ export class CourseComponent {
       })
   }
 
-  getView(e:any){
-   this.show=e;
-    
+  getView(e: any) {
+    this.show = e;
   }
+
 }
-export interface vMenu{
+export interface vMenu {
   description: boolean,
   lessons: boolean,
   challenges: boolean
