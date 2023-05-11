@@ -19,6 +19,8 @@ header {
     color: $light-golden;
     font-size: 30px;
     font-weight: bolder;
+    user-select: none;
+    cursor: pointer;
 }
 
 .tags {
