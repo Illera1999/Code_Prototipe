@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { subscribeOn } from 'rxjs';
 import { Challenge } from 'src/app/class/challenges';
 import { Course } from 'src/app/class/course';
 import { Stage } from 'src/app/class/stage';
 import { DataCourseFireService } from 'src/app/services/data-course-fire.service';
+import { DataUserFireService } from 'src/app/services/data-user-fire.service';
+import { SubscriptionService } from 'src/app/services/subscription.service';
 
 @Component({
   selector: 'app-dropdown-challenges',
@@ -14,18 +17,26 @@ export class DropdownChallengesComponent {
   medChallenges: Challenge[] = [];
   hardChallenges: Challenge[] = [];
 
-  constructor(private db: DataCourseFireService) { }
+  isUserPremium: boolean = false;
+
+  constructor(private db: DataCourseFireService,
+    private user: DataUserFireService,
+    private subs: SubscriptionService) {
+    this.isUserSubscripted();
+  }
 
   ngOnInit(): void {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
     this.db.getParticularCourse(courseUrl || "")
       .then((data: Course | null) => {
         if (data != null) {
-          data.getChallenges().forEach((l: Challenge) => {
-            switch (l.getStage()) {
-              case Stage.LOW: this.lowChallenges.push(l); break;
-              case Stage.MEDIUM: this.medChallenges.push(l); break;
-              case Stage.HIGH: this.hardChallenges.push(l); break;
+          data.getChallenges().forEach((c: Challenge) => {
+            console.log(c);
+
+            switch (c.getStage()) {
+              case Stage.LOW: this.lowChallenges.push(c); break;
+              case Stage.MEDIUM: this.medChallenges.push(c); break;
+              case Stage.HIGH: this.hardChallenges.push(c); break;
             }
           })
         }
@@ -35,6 +46,14 @@ export class DropdownChallengesComponent {
   openDisplay(id: string) {
     let element = document.getElementById(id);
     element?.classList.toggle("displayed");
+  }
 
+  isUserSubscripted() {
+    let user = this.user.getLocalUserEmail();
+    console.log(user);
+    this.subs.getSubscriptionFromUser(user['email'])
+    if (user) {
+      this.isUserPremium = false;
+    }
   }
 }
