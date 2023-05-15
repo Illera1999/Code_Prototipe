@@ -33,7 +33,7 @@ export class DataCourseFireService {
           doc.data()["challenges"],
           doc.data()["users"]);
         this.courses.push(aux);
-        this.lessons = []
+        this.lessons = [];
       });
       console.log("Get collection Course-------------------------------------");
     } catch (e) {
