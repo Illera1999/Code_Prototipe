@@ -33,7 +33,7 @@ export class SubscriptionService {
     let res = false;
     await this.getSubscriptionFromUser(user).then((data: Subscription[]) => {
       data.forEach((s: Subscription) => {
-        if (s.getCourse() == course)
+        if (s.getCourse() == course && s.getIsActive())
           res = true;
       })
     })

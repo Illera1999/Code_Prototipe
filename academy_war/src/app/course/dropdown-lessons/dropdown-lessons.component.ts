@@ -33,6 +33,8 @@ export class DropdownLessonsComponent {
           let mail = this.user.getLocalUserEmail();
           this.subs.isUserSubscribe(mail, this.pl).then((data: any) => {
             this.isUserPremium = data;
+            console.log(this.isUserPremium);
+
           });
           data.getLessons().forEach((l: Lesson) => {
             switch (l.getStage()) {
@@ -48,5 +50,9 @@ export class DropdownLessonsComponent {
   openDisplay(id: string) {
     let element = document.getElementById(id);
     element?.classList.toggle("displayed");
+  }
+
+  openModal() {
+
   }
 }
