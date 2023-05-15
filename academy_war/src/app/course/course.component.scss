@@ -1,0 +1,36 @@
+@import '../../styles.scss';
+
+.general {
+    color: white;
+    display: grid;
+    align-items: center;
+    grid-template:
+        'title title aside'
+        'section section aside'
+}
+
+h2 {
+    grid-area: title;
+    text-align: center;
+}
+
+.section-container {
+    width: 900px;
+    height: 100%;
+    grid-area: section;
+}
+
+.aside-container {
+    grid-area: aside;
+}
+
+.code {
+    width: 900px;
+    height: 500px;
+    box-shadow: 0 5px 5px 5px rgba(#000, .5);
+    border-radius: 10px;
+
+    * {
+        margin: 0 !important;
+    }
+}

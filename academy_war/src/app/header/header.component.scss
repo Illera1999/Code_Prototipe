@@ -19,6 +19,8 @@ header {
     color: $light-golden;
     font-size: 30px;
     font-weight: bolder;
+    user-select: none;
+    cursor: pointer;
 }
 
 .tags {
@@ -122,4 +124,37 @@ button.login-btn {
     &:hover {
         background-color: rgba($black, .75);
     }
+}
+
+
+.categories {
+    margin-left: 25px;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    color: white;
+}
+
+.desplegable {
+    border-radius: 5px;
+    width: 200px;
+    transform: translate(-25px);
+    background-color: $white;
+    color: black;
+    transition: all .4s ease;
+    cursor: pointer;
+    position: absolute;
+    display: none;
+    visibility: collapse;
+}
+
+.item {
+    padding: 10px;
+}
+
+.show {
+    display: block;
+    visibility: visible;
 }

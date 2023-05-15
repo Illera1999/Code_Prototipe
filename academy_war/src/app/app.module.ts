@@ -17,6 +17,9 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { CourseComponent } from './course/course.component';
 import { CourseMenuComponent } from './course/course-menu/course-menu.component';
+import { DropdownLessonsComponent } from './course/dropdown-lessons/dropdown-lessons.component';
+import { DropdownChallengesComponent } from './course/dropdown-challenges/dropdown-challenges.component';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { CourseMenuComponent } from './course/course-menu/course-menu.component'
     RegisterComponent,
     HomeComponent,
     CourseComponent,
-    CourseMenuComponent
+    CourseMenuComponent,
+    DropdownLessonsComponent,
+    DropdownChallengesComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ import { CourseMenuComponent } from './course/course-menu/course-menu.component'
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    MonacoEditorModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

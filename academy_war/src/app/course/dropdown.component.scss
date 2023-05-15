@@ -1,0 +1,41 @@
+@import "../../styles.scss";
+
+
+.container {
+    width: 100%;
+    background-color: $black;
+}
+
+h2 {
+    padding: 25px;
+}
+
+.space {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown-content {
+    background-color: $gray;
+    height: fit-content;
+    padding: 16px;
+    display: none;
+    user-select: none;
+}
+
+.displayed {
+    display: block;
+}
+
+span,
+h2 {
+    user-select: none;
+}
+
+.img {
+    width: 48px;
+    height: 48px;
+    fill: white;
+    margin-right: 32px;
+}
