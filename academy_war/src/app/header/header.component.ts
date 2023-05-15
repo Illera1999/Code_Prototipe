@@ -56,9 +56,9 @@ export class HeaderComponent {
   }
 
   openCourse(place: string) {
-    console.log("/" + place.replace("%20", " "));
+    console.log(place);
 
-    this.router.navigate(["/course/" + place.replace(" ", "%20")]);
+    this.router.navigate(["/course/" + place]);
   }
 
 }
