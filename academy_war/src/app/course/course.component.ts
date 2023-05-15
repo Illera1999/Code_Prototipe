@@ -21,7 +21,7 @@ export class CourseComponent {
   code: string = '#include <stdio.h>\n\tint main() {\n\tprintf("Hello World!"); \n\treturn 0;\n }';
 
   constructor(private db: DataCourseFireService) {
-    let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
+    let courseUrl = document.location.href.split("/").pop()?.replaceAll("%20", " ");
     let v: Course;
     db.getParticularCourse(courseUrl || "")
       .then((data: Course | null) => {

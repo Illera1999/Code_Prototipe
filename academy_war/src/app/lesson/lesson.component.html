@@ -1,12 +1,9 @@
 
 <div class="body">
     <app-lesson-dropdown class="dropdown"></app-lesson-dropdown>
-    <li  *ngFor = "let c of course?.getLessons()">
-        <div class="container" [innerHTML] = "c.getTitle()"> </div>
-        <div class='addition'></div>
-        <div class='corners' [innerHTML] = "c.getDescription().split('*')[0]"></div>
-        <div class='rcorners' [innerHTML] = "c.getDescription().split('*')[1]"></div>
-        <div class='lcorners' [innerHTML] = "c.getDescription().split('*')[2]"></div>
-        <div class='addition'></div>
-    </li>
+    
+    <div class="container" [innerHTML] = "lesson[0].getTitle()"> </div>
+    <div class='corners' [innerHTML] = "lesson[0].getDescription().split('*')[0]"></div>
+    <div class='rcorners' [innerHTML] = "lesson[0].getDescription().split('*')[1]"></div>
+    <div class='lcorners' [innerHTML] = "lesson[0].getDescription().split('*')[2]"></div>
 </div>
