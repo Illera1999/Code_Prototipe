@@ -13,7 +13,7 @@ export class CourseComponent {
 
   show: vMenu = {
     challenges: false,
-    description: false,
+    description: true,
     lessons: false
   };
 

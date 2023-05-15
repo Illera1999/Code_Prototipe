@@ -1,34 +1,42 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { User } from '../class/user';
 import { AuthService } from './auth.service';
-import { collection, getDocs, getFirestore, query, queryEqual, where } from 'firebase/firestore';
->>>>>>> 4ad69b1ce8157b15b0d5221a6c548afbe225840d
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import { Subscription } from '../class/subscription';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SubscriptionService {
 
-<<<<<<< HEAD
-  constructor() { }
-=======
   private db = getFirestore(AuthService.getApp());
-  private user: User | undefined;
 
   constructor() { }
 
-  async getSubscriptionFromUser(username: string) {
+  async getSubscriptionFromUser(username: string): Promise<Subscription[]> {
+    let sub: Subscription[] = [];
     try {
       const q = query(collection(this.db, "subscription"), where("user", "==", username));
       const querySnapshot = await getDocs(q);
-
-      return querySnapshot;
+      querySnapshot.forEach((doc) => {
+        let s = doc.data()
+        sub!.push(new Subscription(s['id'], s['isActive'],
+          s['price'], s['user'], s['course']))
+      })
     } catch (e) {
       console.log(e);
-      return undefined;
     }
+    return sub;
   }
->>>>>>> 4ad69b1ce8157b15b0d5221a6c548afbe225840d
+
+  async isUserSubscribe(user: string, course: string) {
+    let res = false;
+    await this.getSubscriptionFromUser(user).then((data: Subscription[]) => {
+      data.forEach((s: Subscription) => {
+        if (s.getCourse() == course)
+          res = true;
+      })
+    })
+    return res;
+  }
 }
