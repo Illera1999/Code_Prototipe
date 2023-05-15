@@ -1,5 +1,5 @@
 
-<div class>
+<div class="body">
     <app-lesson-dropdown class="dropdown"></app-lesson-dropdown>
     <li  *ngFor = "let c of course?.getLessons()">
         <div class="container" [innerHTML] = "c.getTitle()"> </div>
