@@ -16,13 +16,31 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
 
   protected user: User | undefined;
+  courses: { name: string, id: string }[] = [];
 
-  constructor(private modal: ModalService, private auth: AuthService, private router: Router) {
+  constructor(private modal: ModalService, private auth: AuthService,
+    private router: Router, private dbCourses: DataCourseFireService) {
     let temp = localStorage.getItem("user");
     if (temp) {
       let v = JSON.parse(temp)
       this.user = new User(v['id'], v['username'], [], []);
     }
+
+    this.getcourses();
+
+  }
+
+  async getcourses() {
+    await this.dbCourses.setAllCourse().then((data: Course[]) => {
+      data.forEach((c: Course) => this.courses.push({ name: c.getName(), id: c.getId() }))
+    })
+  }
+
+  /* Flecha */
+  arrow: boolean = true;
+  toogle() {
+    this.arrow = !this.arrow;
+    document.getElementById("courses")?.classList.toggle("show")
   }
 
   openLogin() {
@@ -37,8 +55,10 @@ export class HeaderComponent {
     this.auth.logout();
   }
 
-  openCourse() {
-    this.router.navigate(['/app-course-main']);
+  openCourse(place: string) {
+    console.log("/" + place.replace("%20", " "));
+
+    this.router.navigate(["/course/" + place.replace(" ", "%20")]);
   }
 
 }

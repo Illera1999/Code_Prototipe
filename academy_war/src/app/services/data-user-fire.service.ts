@@ -28,6 +28,10 @@ export class DataUserFireService {
     }
   }
 
+  getLocalUserEmail() {
+    return JSON.parse(localStorage.getItem("user") || "")['id'];
+  }
+
   getUser() {
     return this.user;
   }

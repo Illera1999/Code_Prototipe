@@ -28,11 +28,10 @@ export class DataCourseFireService {
           doc.id,
           doc.data()["name"],
           doc.data()["description"],
-          doc.data()["programmingLanguage"],
+          doc.data()["ProgrammingLanguage"],
           this.lessons,
           doc.data()["challenges"],
           doc.data()["users"]);
-
         this.courses.push(aux);
         this.lessons = []
       });

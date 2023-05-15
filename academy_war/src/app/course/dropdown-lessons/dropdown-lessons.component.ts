@@ -3,6 +3,7 @@ import { Course } from 'src/app/class/course';
 import { Lesson } from 'src/app/class/lesson';
 import { Stage } from 'src/app/class/stage';
 import { DataCourseFireService } from 'src/app/services/data-course-fire.service';
+import { DataUserFireService } from 'src/app/services/data-user-fire.service';
 
 @Component({
   selector: 'app-dropdown-lessons',
@@ -14,8 +15,11 @@ export class DropdownLessonsComponent {
   medLessons: Lesson[] = [];
   hardLessons: Lesson[] = [];
 
-  constructor(private db: DataCourseFireService) { }
+  isUserPremium: boolean = false;
 
+  constructor(private db: DataCourseFireService,
+    private user: DataUserFireService,
+    private subs: SubscriptionService) { }
   ngOnInit(): void {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
     this.db.getParticularCourse(courseUrl || "")
@@ -37,5 +41,12 @@ export class DropdownLessonsComponent {
     element?.classList.toggle("displayed");
 
   }
-
+  isUserSubscripted() {
+    let user = this.user.getLocalUserEmail();
+    console.log(user);
+    this.subs.getSubscriptionFromUser(user['email'])
+    if (user) {
+      this.isUserPremium = false;
+    }
+  }
 }

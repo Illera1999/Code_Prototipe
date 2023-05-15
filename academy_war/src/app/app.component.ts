@@ -8,6 +8,8 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   title = 'academy_war';
+  editorOptions = {theme: 'vs-dark', language: 'javascript'};
+  code: string= 'function x() {\nconsole.log("Hello world!");\n}';
 
   constructor(private auth: AuthService) { }
 }
