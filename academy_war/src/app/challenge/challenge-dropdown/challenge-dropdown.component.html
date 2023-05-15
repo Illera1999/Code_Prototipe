@@ -11,7 +11,9 @@
     </button>
     <div class="sidebar" [hidden]="!hideSideNav">
         <li *ngFor="let l of course?.getChallenges()">
-            <div class="container" [innerHTML] = "l.getTitle()"> </div>
+            <span (click)="openChallenge(l.getTitle())">
+                <div class="container" [innerHTML] = "l.getTitle()"> </div>
+            </span>
         </li>
     </div>
 </div>

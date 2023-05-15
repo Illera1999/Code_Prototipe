@@ -3,7 +3,10 @@
         <h2>Low Level Challenges</h2>
         <div class="dropdown-content displayed" id="low">
             <span *ngFor="let c of lowChallenges">
-                {{c.getTitle()}}<br />
+                <span (click)="openChallenge(c.getTitle())">
+                    {{c.getTitle()}}
+                </span>
+                <br />
             </span>
         </div>
     </div>
@@ -11,7 +14,10 @@
         <h2>Medium Level Challenges</h2>
         <div class="dropdown-content" id="mid">
             <span *ngFor="let c of medChallenges">
-                {{c.getTitle()}}<br />
+                <span (click)="openChallenge(c.getTitle())">
+                    {{c.getTitle()}}
+                </span>
+                <br />
             </span>
         </div>
     </div>
@@ -19,7 +25,10 @@
         <h2>High Level Challenges</h2>
         <div class="dropdown-content" id="high">
             <span *ngFor="let c of hardChallenges">
-                {{c.getTitle()}}<br />
+                <span (click)="openChallenge(c.getTitle())">
+                    {{c.getTitle()}}
+                </span>
+                <br />
             </span>
         </div>
     </div>

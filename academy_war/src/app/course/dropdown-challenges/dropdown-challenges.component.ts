@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Challenge } from 'src/app/class/challenges';
 import { Course } from 'src/app/class/course';
 import { Stage } from 'src/app/class/stage';
@@ -14,7 +15,7 @@ export class DropdownChallengesComponent {
   medChallenges: Challenge[] = [];
   hardChallenges: Challenge[] = [];
 
-  constructor(private db: DataCourseFireService) { }
+  constructor(private db: DataCourseFireService, protected router: Router) { }
 
   ngOnInit(): void {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
@@ -36,5 +37,9 @@ export class DropdownChallengesComponent {
     let element = document.getElementById(id);
     element?.classList.toggle("displayed");
 
+  }
+
+  openChallenge(id:String) {
+    this.router.navigate(['/challenge/' + id])
   }
 }

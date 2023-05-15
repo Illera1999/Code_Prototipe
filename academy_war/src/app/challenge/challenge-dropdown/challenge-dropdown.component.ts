@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Course } from 'src/app/class/course';
 import { DataCourseFireService } from 'src/app/services/data-course-fire.service';
 
@@ -14,7 +15,7 @@ export class ChallengeDropdownComponent {
 
   course!: Course | null;
 
-  constructor(private db: DataCourseFireService) {
+  constructor(private db: DataCourseFireService, private router: Router) {
     db.getParticularCourse("Course C").then((data: Course | null) => {
       if (data != null) this.course = data;
     })
@@ -24,9 +25,14 @@ export class ChallengeDropdownComponent {
       
   }
 
+
   toggleSideNav() {
-    console.log(this.course)
     return this.hideSideNav = !this.hideSideNav;
-    
+  }
+  openChallenge(id:String) {
+    this.router.navigate(['/challenge/', id]);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1);
   }
 }

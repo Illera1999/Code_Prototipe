@@ -28,8 +28,7 @@ export class Course {
     public getName() { return this.name; }
     public getDescription() { return this.description; }
     public getProgrammingLanguage() { return this.programmingLanguage; }
-    public getChallenges() { console.log(this.challenges);
-        return this.challenges; }
+    public getChallenges() { return this.challenges; }
     public getLessons() { return this.lessons; }
     public getUsers() { return this.users; }
 
