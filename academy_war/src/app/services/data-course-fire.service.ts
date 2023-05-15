@@ -26,12 +26,10 @@ export class DataCourseFireService {
           const auxe = new Lesson(element);
           this.lessons.push(auxe)
         });
-
         let challenges = doc.data()["challenges"];
-        challenges.forEach((element: any) => {
-          const auxc = new Challenge(element.datos.id, element.datos.title,element.datos.description, element.datos.score, element.datos.stage);
-          this.challenges.push(auxc)
-          
+        lessons.forEach((element: any) => {
+          const auxe2 = new Challenge(element);
+          this.challenges.push(auxe2)
         });
 
         const aux = new Course(
@@ -42,7 +40,7 @@ export class DataCourseFireService {
           this.lessons,
           this.challenges,
           doc.data()["users"]);
-        
+
         this.courses.push(aux);
         this.lessons = []
         this.challenges = []
