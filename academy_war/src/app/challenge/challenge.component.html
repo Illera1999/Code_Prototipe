@@ -1,5 +1,6 @@
 <div>
     <ul  *ngFor = "let c of course?.getChallenges()">
+        <app-challenge-dropdown class="dropdown"></app-challenge-dropdown>
         <div class="container" [innerHTML] = "c.getTitle()"> </div>
         <div class='corners' [innerHTML] = "c.getDescription().split('*')[0]"></div>
         <div class='rcorners' [innerHTML] = "c.getDescription().split('*')[1]"></div>

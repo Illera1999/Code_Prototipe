@@ -27,7 +27,7 @@ export class DataCourseFireService {
           this.lessons.push(auxe)
         });
         let challenges = doc.data()["challenges"];
-        lessons.forEach((element: any) => {
+        challenges.forEach((element: any) => {
           const auxe2 = new Challenge(element);
           this.challenges.push(auxe2)
         });
