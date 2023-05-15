@@ -8,7 +8,13 @@
         </div>
     </div>
     <div class="dropdown" (click)="openDisplay('mid')">
-        <h2>Medium Level Challenges</h2>
+        <div class="space">
+            <h2>Medium Level Challenges</h2>
+            <svg class="img" *ngIf="!isUserPremium" viewBox="0 0 16 16">
+                <path
+                    d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
+            </svg>
+        </div>
         <div class="dropdown-content" id="mid">
             <span *ngFor="let c of medChallenges">
                 {{c.getTitle()}}<br />
@@ -16,7 +22,13 @@
         </div>
     </div>
     <div class="dropdown" (click)="openDisplay('high')">
-        <h2>High Level Challenges</h2>
+        <div class="space">
+            <h2>High Level Challenges</h2>
+            <svg class="img" *ngIf="!isUserPremium" viewBox="0 0 16 16">
+                <path
+                    d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
+            </svg>
+        </div>
         <div class="dropdown-content" id="high">
             <span *ngFor="let c of hardChallenges">
                 {{c.getTitle()}}<br />
