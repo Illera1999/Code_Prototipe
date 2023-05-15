@@ -4,9 +4,10 @@ import { Lesson } from 'src/app/class/lesson';
 import { Stage } from 'src/app/class/stage';
 import { DataCourseFireService } from 'src/app/services/data-course-fire.service';
 import { DataUserFireService } from 'src/app/services/data-user-fire.service';
+import { ModalService } from 'src/app/services/modal.service';
 import { SubscriptionService } from 'src/app/services/subscription.service';
 import { PayModalComponent } from '../pay-modal/pay-modal.component';
-import { ModalService } from 'src/app/services/modal.service';
+import { LoginComponent } from 'src/app/login/login.component';
 
 @Component({
   selector: 'app-dropdown-lessons',
@@ -38,8 +39,6 @@ export class DropdownLessonsComponent {
           let mail = this.user.getLocalUserEmail();
           this.subs.isUserSubscribe(mail, this.pl).then((data: any) => {
             this.isUserPremium = data;
-            console.log(this.isUserPremium);
-
           });
           data.getLessons().forEach((l: Lesson) => {
             switch (l.getStage()) {
@@ -59,6 +58,8 @@ export class DropdownLessonsComponent {
 
   
   openModal() {
-    this.modal.openDialog(PayModalComponent, "500px", "600px",this.course);
+    let user = this.user.getLocalUserEmail();
+    if (!user) this.modal.openDialog(LoginComponent, "500px", "600px");
+    else this.modal.openDialog(PayModalComponent, "500px", "600px",this.course);
   }
 }
