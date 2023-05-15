@@ -23,6 +23,7 @@ import { DropdownLessonsComponent } from './course/dropdown-lessons/dropdown-les
 import { DropdownChallengesComponent } from './course/dropdown-challenges/dropdown-challenges.component';
 import { ChallengeComponent } from './challenge/challenge.component';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
+import { ChallengeDialogComponent } from './challenge/challenge-dialog/challenge-dialog.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MonacoEditorModule } from 'ngx-monaco-editor';
     LessonDropdownComponent,
     CourseComponent,
     CourseMenuComponent,
-    ChallengeComponent
+    ChallengeComponent,
+    ChallengeDialogComponent
   ],
   imports: [
     BrowserModule,

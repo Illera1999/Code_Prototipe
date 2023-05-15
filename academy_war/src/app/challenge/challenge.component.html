@@ -5,6 +5,7 @@
         <div class='rcorners' [innerHTML] = "c.getDescription().split('*')[1]"></div>
         <div class='lcorners' [innerHTML] = "c.getDescription().split('*')[2]"></div>
         <h1><ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code" class="code"></ngx-monaco-editor></h1> 
-       
+        <span><button (click)="evaluateChallenge()">Atis Tirma</button></span>
     </ul>
+    
 </div>

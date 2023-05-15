@@ -63,3 +63,30 @@ h1 {
       margin: 0 !important;
   }
 }
+
+span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button{
+  background-color: #7D84B2;
+  width: 135px;
+  height: 50px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+button:hover {
+  background-color: whitesmoke;
+  color: #656b92;
+  border-color: #7D84B2;
+  width: 135px;
+  height: 50px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
