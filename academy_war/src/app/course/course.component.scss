@@ -3,24 +3,20 @@
 .general {
     color: white;
     display: grid;
+    align-items: center;
     grid-template:
-        'title title title titile aside aside aside'
-        'title title title titile aside aside aside'
-        'section section section section aside aside aside'
-        'section section section section aside aside aside'
-        'section section section section aside aside aside'
-        'section section section section aside aside aside'
-        'section section section section aside aside aside'
+        'title title aside'
+        'section section aside'
 }
 
 h2 {
     grid-area: title;
+    text-align: center;
 }
 
 .section-container {
-    width: 90%;
+    width: 900px;
     height: 100%;
-    padding: 25px;
     grid-area: section;
 }
 
