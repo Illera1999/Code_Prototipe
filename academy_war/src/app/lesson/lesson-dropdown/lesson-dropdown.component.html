@@ -10,11 +10,11 @@
         </span>
     </button>
     <div class="sidebar" [hidden]="!hideSideNav">
-        <li *ngFor="let l of course?.getLessons()">
+        <ul *ngFor="let l of course?.getLessons()">
             <span (click)="openLesson(l.getTitle())">
                 <div class="container" [innerHTML] = "l.getTitle()"> </div>
             </span>
-        </li>
+        </ul>
     </div>
 </div>
         
