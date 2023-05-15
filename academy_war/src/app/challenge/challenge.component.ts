@@ -16,4 +16,7 @@ export class ChallengeComponent {
       if (data != null) this.course = data;
     })
   }
+
+  editorOptions = { theme: 'vs-dark', language: 'c' };
+  code: string = '#include <stdio.h>\n\tint main() {\n\tprintf("Hello World!"); \n\treturn 0;\n }';
 }
