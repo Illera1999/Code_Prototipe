@@ -1,23 +1,21 @@
 .sidebar{
     width: 200px;
-    min-height: inherit;
     background-color: #000;
-    transition: all 0.3s;
+    transition: width 0.3s;
+}
+.body {
+    top: 20vh;
+    bottom: 20vh;
+    right: 0;
+    display: flex;
+    position: fixed;
+    justify-content: center;
     float: right;
 }
 
-.sidebar.hidden {
-    display: none;
-}
-
-@media (max-width: 575px) {
-    .sidebar {
-        margin-right: -200px;
-    }
-
-    .sidebar.hidden{
-        width: 0;
-    }
+.button {
+    position: fixed;
+    right: inherit;
 }
 
 .sidebar li {
@@ -30,8 +28,4 @@
 
 li{
     color:aliceblue;
-}
-
-.bar-and-button{
-    position: right;
 }
