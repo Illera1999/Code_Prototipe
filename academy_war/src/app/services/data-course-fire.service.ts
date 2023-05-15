@@ -4,6 +4,7 @@ import { AuthService } from './auth.service';
 import { Course } from '../class/course';
 import { Lesson } from '../class/lesson';
 import { Challenge } from '../class/challenges';
+import { registerLocaleData } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,7 @@ export class DataCourseFireService {
         challenges.forEach((element: any) => {
           const auxc = new Challenge(element.datos.id, element.datos.title,element.datos.description, element.datos.score, element.datos.stage);
           this.challenges.push(auxc)
+          
         });
 
         const aux = new Course(
@@ -43,6 +45,7 @@ export class DataCourseFireService {
         
         this.courses.push(aux);
         this.lessons = []
+        this.challenges = []
       });
       console.log("Get collection Course-------------------------------------");
     } catch (e) {
