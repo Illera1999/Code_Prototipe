@@ -22,6 +22,8 @@ import { LessonDropdownComponent } from './lesson/lesson-dropdown/lesson-dropdow
 import { DropdownLessonsComponent } from './course/dropdown-lessons/dropdown-lessons.component';
 import { DropdownChallengesComponent } from './course/dropdown-challenges/dropdown-challenges.component';
 import { ChallengeComponent } from './challenge/challenge.component';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,8 @@ import { ChallengeComponent } from './challenge/challenge.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    MonacoEditorModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

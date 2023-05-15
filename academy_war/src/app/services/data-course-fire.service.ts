@@ -38,7 +38,7 @@ export class DataCourseFireService {
           doc.id,
           doc.data()["name"],
           doc.data()["description"],
-          doc.data()["programmingLanguage"],
+          doc.data()["ProgrammingLanguage"],
           this.lessons,
           this.challenges,
           doc.data()["users"]);
