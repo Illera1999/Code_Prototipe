@@ -1,7 +1,7 @@
 
 <div class="body">
     <app-lesson-dropdown class="dropdown"></app-lesson-dropdown>
-    
+    <router-outlet></router-outlet>
     <div class="container" [innerHTML] = "lesson[0].getTitle()"> </div>
     <div class='corners' [innerHTML] = "lesson[0].getDescription().split('*')[0]"></div>
     <div class='rcorners' [innerHTML] = "lesson[0].getDescription().split('*')[1]"></div>
