@@ -21,6 +21,7 @@ import { CourseMenuComponent } from './course/course-menu/course-menu.component'
 import { LessonDropdownComponent } from './lesson/lesson-dropdown/lesson-dropdown.component';
 import { DropdownLessonsComponent } from './course/dropdown-lessons/dropdown-lessons.component';
 import { DropdownChallengesComponent } from './course/dropdown-challenges/dropdown-challenges.component';
+import { ChallengeComponent } from './challenge/challenge.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { DropdownChallengesComponent } from './course/dropdown-challenges/dropdo
     LessonComponent,
     LessonDropdownComponent,
     CourseComponent,
-    CourseMenuComponent
+    CourseMenuComponent,
+    ChallengeComponent
   ],
   imports: [
     BrowserModule,

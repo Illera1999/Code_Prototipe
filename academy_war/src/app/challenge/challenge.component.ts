@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../services/auth.service';
-import { ModalService } from '../services/modal.service';
-import { DataCourseFireService } from '../services/data-course-fire.service';
 import { Course } from '../class/course';
+import { DataCourseFireService } from '../services/data-course-fire.service';
 
 @Component({
-  selector: 'app-lesson',
-  templateUrl: './lesson.component.html',
-  styleUrls: ['./lesson.component.scss']
+  selector: 'app-challenge',
+  templateUrl: './challenge.component.html',
+  styleUrls: ['./challenge.component.scss']
 })
-export class LessonComponent {
+export class ChallengeComponent {
   course!: Course | null;
 
   protected description : any;
@@ -18,5 +16,4 @@ export class LessonComponent {
       if (data != null) this.course = data;
     })
   }
-
 }

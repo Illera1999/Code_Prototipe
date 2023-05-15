@@ -32,7 +32,7 @@ export class DataCourseFireService {
           this.lessons,
           doc.data()["challenges"],
           doc.data()["users"]);
-
+        
         this.courses.push(aux);
         this.lessons = []
       });
@@ -51,4 +51,5 @@ export class DataCourseFireService {
     });
     return res;
   }
+
 }
