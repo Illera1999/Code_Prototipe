@@ -1,6 +1,13 @@
 <div class="body">
     <button  type="button" class="button" (click)="toggleSideNav()">
-        <span class="navbar-toggler-icon" >X</span>
+        <span class="toggler">
+            <p *ngIf="hideSideNav">
+                >
+            </p>
+            <p *ngIf="!hideSideNav">
+                <
+            </p>
+        </span>
     </button>
     <div class="sidebar" [hidden]="!hideSideNav">
         <li *ngFor="let l of course?.getLessons()">
