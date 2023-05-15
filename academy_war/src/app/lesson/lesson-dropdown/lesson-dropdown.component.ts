@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LessonSideNavService } from 'src/app/services/lesson-side-nav.service';
 
 @Component({
   selector: 'app-lesson-dropdown',
@@ -10,7 +9,7 @@ import { LessonSideNavService } from 'src/app/services/lesson-side-nav.service';
 
 
 export class LessonDropdownComponent implements OnInit {
-  constructor(public sideNavService: LessonSideNavService){}
+  protected hideSideNav: boolean = false;
   fruits: any[] | undefined = [
     {
       name: "banana"
@@ -25,5 +24,9 @@ export class LessonDropdownComponent implements OnInit {
 
   ngOnInit(): void {
       
+  }
+
+  toggleSideNav() {
+    return this.hideSideNav = !this.hideSideNav;
   }
 }
