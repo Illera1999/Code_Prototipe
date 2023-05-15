@@ -17,6 +17,8 @@ export class DropdownChallengesComponent {
   medChallenges: Challenge[] = [];
   hardChallenges: Challenge[] = [];
 
+  pl = "";
+
   isUserPremium: boolean = false;
 
   constructor(private db: DataCourseFireService,
@@ -31,8 +33,13 @@ export class DropdownChallengesComponent {
       .then((data: Course | null) => {
         if (data != null) {
           data.getChallenges().forEach((c: Challenge) => {
-            console.log(c);
+            this.pl = data.getProgrammingLanguage();
+            let mail = this.user.getLocalUserEmail();
+            this.subs.isUserSubscribe(mail, this.pl).then((data: any) => {
+              this.isUserPremium = data;
+              console.log(this.isUserPremium);
 
+            });
             switch (c.getStage()) {
               case Stage.LOW: this.lowChallenges.push(c); break;
               case Stage.MEDIUM: this.medChallenges.push(c); break;
