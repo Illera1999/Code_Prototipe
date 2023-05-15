@@ -12,15 +12,8 @@ import { DataCourseFireService } from 'src/app/services/data-course-fire.service
 
 export class LessonDropdownComponent implements OnInit {
   protected hideSideNav: boolean = false;
-  // protected sidebarTop?: string;
-  // protected sidebarHeight?: string;
-
-  // @HostListener('window:scroll', ['$event'])
-  // onWindowScroll() {
-  //   const headerHeight = document.querySelector('header')?.offsetHeight;
-  //   this.sidebarTop = window.pageYOffset + 'px';
-  //   this.sidebarHeight = `calc(100vh - ${headerHeight}px)`;
-  // }
+  protected open: string = "<";
+  protected close: string = ">";
 
   course!: Course | null;
 
