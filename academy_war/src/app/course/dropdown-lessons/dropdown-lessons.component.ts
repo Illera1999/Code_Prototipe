@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 import { Course } from 'src/app/class/course';
 import { Lesson } from 'src/app/class/lesson';
 import { Stage } from 'src/app/class/stage';
+import { LoginComponent } from 'src/app/login/login.component';
 import { DataCourseFireService } from 'src/app/services/data-course-fire.service';
 import { DataUserFireService } from 'src/app/services/data-user-fire.service';
+import { ModalService } from 'src/app/services/modal.service';
 import { SubscriptionService } from 'src/app/services/subscription.service';
 
 @Component({
@@ -22,7 +24,8 @@ export class DropdownLessonsComponent {
 
   constructor(private db: DataCourseFireService,
     private user: DataUserFireService,
-    private subs: SubscriptionService) { }
+    private subs: SubscriptionService,
+    private modal: ModalService) { }
 
   ngOnInit(): void {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
@@ -33,8 +36,6 @@ export class DropdownLessonsComponent {
           let mail = this.user.getLocalUserEmail();
           this.subs.isUserSubscribe(mail, this.pl).then((data: any) => {
             this.isUserPremium = data;
-            console.log(this.isUserPremium);
-
           });
           data.getLessons().forEach((l: Lesson) => {
             switch (l.getStage()) {
@@ -53,6 +54,7 @@ export class DropdownLessonsComponent {
   }
 
   openModal() {
-
+    let user = this.user.getLocalUserEmail();
+    if (!user) this.modal.openDialog(LoginComponent, "500px", "600px");
   }
 }
