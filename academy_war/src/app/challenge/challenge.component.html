@@ -2,10 +2,11 @@
     <li  *ngFor = "let c of course?.getChallenges()">
         
         <div class="container" [innerHTML] = "c.getTitle()"> </div>
-        <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code" class="code"></ngx-monaco-editor>
+        
         <div class='corners' [innerHTML] = "c.getDescription().split('*')[0]"></div>
         <div class='rcorners' [innerHTML] = "c.getDescription().split('*')[1]"></div>
         <div class='lcorners' [innerHTML] = "c.getDescription().split('*')[2]"></div>
+        <h1><ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code" class="code"></ngx-monaco-editor></h1> 
        
     </li>
 </div>
