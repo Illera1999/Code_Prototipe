@@ -28,9 +28,7 @@ export class DataCourseFireService {
 
         let challenges = doc.data()["challenges"];
         challenges.forEach((element: any) => {
-          console.log(element)
           const auxc = new Challenge(element.datos.id, element.datos.title,element.datos.description, element.datos.score, element.datos.stage);
-          console.log(auxc);
           this.challenges.push(auxc)
         });
 
