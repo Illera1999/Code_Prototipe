@@ -1,17 +1,18 @@
-<main class="body">
-    <div class="bar-and-button">
-        <button  type="button" class="navbar-toggler" (click)="toggleSideNav()">
-            <span class="navbar-toggler-icon">X</span>
-        </button>
-        <div class="sidebar" *ngIf="hideSideNav">
-            <button  type="button" class="navbar-toggler" (click)="toggleSideNav()">
-                <span class="navbar-toggler-icon">X</span>
-            </button>
-            <li *ngFor="let fruit of fruits">
-                {{fruit.name}}
-            </li>
-        </div>
-
+<div class="body">
+    <button  type="button" class="button" (click)="toggleSideNav()">
+        <span class="toggler">
+            <p *ngIf="hideSideNav">
+                >
+            </p>
+            <p *ngIf="!hideSideNav">
+                <
+            </p>
+        </span>
+    </button>
+    <div class="sidebar" [hidden]="!hideSideNav">
+        <li *ngFor="let l of course?.getLessons()">
+            <div class="container" [innerHTML] = "l.getTitle()"> </div>
+        </li>
     </div>
-</main>
+</div>
         

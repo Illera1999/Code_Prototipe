@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from 'src/app/class/course';
+import { DataCourseFireService } from 'src/app/services/data-course-fire.service';
 
 @Component({
   selector: 'app-lesson-dropdown',
@@ -10,17 +12,16 @@ import { Component, OnInit } from '@angular/core';
 
 export class LessonDropdownComponent implements OnInit {
   protected hideSideNav: boolean = false;
-  fruits: any[] | undefined = [
-    {
-      name: "banana"
-    },
-    {
-      name: "pear"
-    },
-    {
-      name: "apple"
-    },
-  ]
+  protected open: string = "<";
+  protected close: string = ">";
+
+  course!: Course | null;
+
+  constructor(private db: DataCourseFireService) {
+    db.getParticularCourse("Course C").then((data: Course | null) => {
+      if (data != null) this.course = data;
+    })
+  }
 
   ngOnInit(): void {
       

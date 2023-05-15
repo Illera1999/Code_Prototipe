@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Course } from 'src/app/class/course';
 import { Lesson } from 'src/app/class/lesson';
 import { Stage } from 'src/app/class/stage';
+import { Router } from '@angular/router';
 import { DataCourseFireService } from 'src/app/services/data-course-fire.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class DropdownLessonsComponent {
   medLessons: Lesson[] = [];
   hardLessons: Lesson[] = [];
 
-  constructor(private db: DataCourseFireService) { }
+  constructor(private db: DataCourseFireService, protected router: Router) { }
 
   ngOnInit(): void {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
@@ -36,6 +37,10 @@ export class DropdownLessonsComponent {
     let element = document.getElementById(id);
     element?.classList.toggle("displayed");
 
+  }
+
+  openLesson(id:String) {
+    this.router.navigate(['/lesson/' + id])
   }
 
 }
