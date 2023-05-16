@@ -34,6 +34,7 @@ export class DropdownChallengesComponent {
   arrow2: boolean = true;
   arrow3: boolean = true;
 
+
   ngOnInit(): void {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
     this.db.getParticularCourse(courseUrl || "")
@@ -79,6 +80,7 @@ export class DropdownChallengesComponent {
     if (!user) this.modal.openDialog(LoginComponent, "500px", "600px");
     else this.modal.openDialog(PayModalComponent, "500px", "600px", this.course);
   }
+
 
   openChallenge(id: String) {
     this.router.navigate(['/challenge/' + id])

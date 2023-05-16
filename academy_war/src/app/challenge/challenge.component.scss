@@ -34,6 +34,10 @@
     
 }
 
+.timer{
+  text-align: center;
+}
+
 ul {
     background-color: #D9DBF1;
 }
@@ -56,6 +60,7 @@ h1 {
   height: 500px;
   box-shadow: 0 5px 5px 5px rgba(#000, .5);
   border-radius: 10px;
+  z-index: -1;
   
   
 

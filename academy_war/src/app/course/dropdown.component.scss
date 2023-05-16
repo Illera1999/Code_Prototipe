@@ -73,15 +73,17 @@ h2 {
 }
 
 .pay-btn {
-    height: fit-content;
+    width:min-content;
     color: black;
     text-align: center;
-    width: 150px;
+    width: 300px;
     border: 2px solid $light-golden;
     border-radius: 5px;
     padding: 5px;
     transition: all .3s ease;
-    background-color: $white;
+    background-color: #357266;
+    margin-left: 60%;
+    font-size: 18px;
     cursor: pointer;
 
     &:hover {
