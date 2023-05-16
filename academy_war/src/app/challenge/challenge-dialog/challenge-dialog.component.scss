@@ -1,0 +1,35 @@
+
+
+p {
+    border-color: #656b92;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+span {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+button{
+    background-color: #7D84B2;
+    width: 85px;
+    height: 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  button:hover {
+    background-color: whitesmoke;
+    color: #656b92;
+    border-color: #7D84B2;
+    width: 85px;
+    height: 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }

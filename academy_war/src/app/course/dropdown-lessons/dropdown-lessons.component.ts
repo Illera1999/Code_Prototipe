@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Course } from 'src/app/class/course';
 import { Lesson } from 'src/app/class/lesson';
 import { Stage } from 'src/app/class/stage';
+import { Router } from '@angular/router';
 import { DataCourseFireService } from 'src/app/services/data-course-fire.service';
 import { DataUserFireService } from 'src/app/services/data-user-fire.service';
 import { ModalService } from 'src/app/services/modal.service';
@@ -27,7 +28,8 @@ export class DropdownLessonsComponent {
   constructor(private db: DataCourseFireService,
     private user: DataUserFireService,
     private subs: SubscriptionService,
-    private modal: ModalService) { }
+    private modal: ModalService,
+    private router: Router) { }
 
   ngOnInit(): void {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
@@ -56,10 +58,13 @@ export class DropdownLessonsComponent {
     element?.classList.toggle("displayed");
   }
 
-  
+  openLesson(id: String) {
+    this.router.navigate(['/lesson/' + id])
+  }
+
   openModal() {
     let user = this.user.getLocalUserEmail();
     if (!user) this.modal.openDialog(LoginComponent, "500px", "600px");
-    else this.modal.openDialog(PayModalComponent, "500px", "600px",this.course);
+    else this.modal.openDialog(PayModalComponent, "500px", "600px", this.course);
   }
 }
