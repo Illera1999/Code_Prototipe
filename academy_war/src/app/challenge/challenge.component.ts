@@ -32,7 +32,7 @@ export class ChallengeComponent {
             
             console.log(this.challenge[0].getCode())
             this.code = this.challenge[0].getCode();
-            this.code = '#include <stdio.h>\n \t int main() {\n\tprintf("Hello World!"); \n\treturn 0;\n }';
+            //this.code = '#include <stdio.h>\n \tint main() {\n\tprintf(" #### "); \n\t///////Keep printing your C here\n }';
             
           }
         }
