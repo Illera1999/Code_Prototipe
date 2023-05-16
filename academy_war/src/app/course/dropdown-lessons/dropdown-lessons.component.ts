@@ -30,6 +30,9 @@ export class DropdownLessonsComponent {
     private subs: SubscriptionService,
     private modal: ModalService,
     private router: Router) { }
+  arrow1: boolean = true;
+  arrow2: boolean = true;
+  arrow3: boolean = true;
 
   ngOnInit(): void {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
@@ -54,6 +57,19 @@ export class DropdownLessonsComponent {
   }
 
   openDisplay(id: string) {
+    switch(id){
+      case "low":
+        this.arrow1 = !this.arrow1;
+        break;
+      
+      case "mid":
+        this.arrow2 = !this.arrow2;
+        break;
+      
+      case "high":
+        this.arrow3 = !this.arrow3;
+        break;
+    }
     let element = document.getElementById(id);
     element?.classList.toggle("displayed");
   }
@@ -67,4 +83,5 @@ export class DropdownLessonsComponent {
     if (!user) this.modal.openDialog(LoginComponent, "500px", "600px");
     else this.modal.openDialog(PayModalComponent, "500px", "600px", this.course);
   }
+
 }

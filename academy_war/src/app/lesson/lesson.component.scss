@@ -1,50 +1,52 @@
+.body {
+  height: 84vh;
+}
+
 .rcorners {
-    border-radius: 25px;
-    background: #8E9DCC;
-    padding: 20px;    
-    text-align: justify;
-    margin-left: 35%;
-    margin-right: 35%;
-  }
+  border-radius: 25px;
+  background: #8E9DCC;
+  padding: 20px;
+  text-align: justify;
+  margin-left: 35%;
+  margin-right: 35%;
+}
 
-  .lcorners {
-    padding: 25px;    
-    width:auto; 
-    height:fit-content;
-    text-align:justify;
-    margin-left: 10%;
-  }
+.lcorners {
+  padding: 25px;
+  width: auto;
+  height: fit-content;
+  text-align: justify;
+  margin-left: 10%;
+}
 
+.corners {
+  padding: 20px;
+  text-align: justify;
+  margin-left: 10%;
+}
 
+.container {
+  background: #7D84B2;
+  font-weight: bold;
 
-  .corners {
-    padding: 20px; 
-    text-align:justify;
-    margin-left: 10%;
-  }
+  transition: all .3s ease;
+  box-shadow: 0 10px 5px 5px rgba(#000000, .5);
+  text-align: center;
+  color: #000000;
+  font-size: 40px;
+  padding: 25px;
 
-  .container {
-    background: #7D84B2;
-    font-weight: bold;
-
-    transition: all .3s ease;
-    box-shadow: 0 10px 5px 5px rgba(#000000, .5);
-    text-align: center;
-    color: #000000;
-    font-size: 40px;
-    padding: 25px;
-    
 }
 
 li {
-    background-color: #D9DBF1;
+  background-color: #D9DBF1;
 }
 
 .addition {
-    margin-top: 25px;
-    border-radius: 25px;
-    background: #8E9DCC;
-    padding: 20px;    
-    margin-left: 35%;
-    margin-right: 35%;
+  margin-top: 25px;
+  border-radius: 25px;
+  background: #8E9DCC;
+  padding: 20px;
+  margin-left: 35%;
+  margin-right: 35%;
 }
