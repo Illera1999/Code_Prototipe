@@ -8,7 +8,7 @@ import { SubscriptionService } from 'src/app/services/subscription.service';
 @Component({
   selector: 'app-pay-modal',
   templateUrl: './pay-modal.component.html',
-  styleUrls: ['./pay-modal.component.scss'],
+  styleUrls: ['./pay-modal.component.scss', '../dropdown.component.scss']
 })
 export class PayModalComponent {
 
