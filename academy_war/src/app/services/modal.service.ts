@@ -5,14 +5,14 @@ import { MatDialog } from '@angular/material/dialog';
   providedIn: 'root'
 })
 export class ModalService {
-
-  constructor(protected dialog: MatDialog) { }
+  
+  constructor(protected dialog: MatDialog) {}
 
   openDialog(component: any, heigh?: string, width?: string, data?: any) {
     this.dialog.open(component, {
       height: heigh,
       width: width,
-      data: data
+      data: data,
     });
   }
 
