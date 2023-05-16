@@ -21,5 +21,6 @@ export class PayModalComponent {
 
   activePay(){
     this.dbSubscription.activateSubscription(this.user.getLocalUserEmail(),this.course.getProgrammingLanguage());
+    window.location.reload();
   }
 }
