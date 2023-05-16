@@ -1,11 +1,22 @@
 <div class="container">
     <div class="dropdown" (click)="openDisplay('low')">
-        <h2>Low Level Challenges</h2>
-        <div class="dropdown-content displayed" id="low">
-            <span *ngFor="let c of lowChallenges">
-                <span (click)="openChallenge(c.getTitle())">
-                    {{c.getTitle()}}
+        <div class="space">
+            <h2>Low Level Challenges</h2>
+            <span></span>
+            <span class="categories">
+                <span>
+                    <svg *ngIf="!arrow1" class="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg>
+                    <svg *ngIf="arrow1" class="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                    </svg>
                 </span>
+            </span>
+        </div>
+        <div class="dropdown-content displayed" id="low">
+            <span *ngFor="let c of lowChallenges" (click)="openChallenge(c.getTitle())" class="lesson">
+                {{c.getTitle()}}
                 <br />
             </span>
         </div>
@@ -17,10 +28,23 @@
                 <path
                     d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
             </svg>
+            <span class="categories">
+                <span>
+                    <svg *ngIf="arrow2" class="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg>
+                    <svg *ngIf="!arrow2" class="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                    </svg>
+                </span>
+            </span>
         </div>
         <div class="dropdown-content" id="mid">
+            <div *ngIf="!isUserPremium" class="lesson not-premium">
+                <span class="pay-btn" (click)="openModal()">Upgrade your Subscription</span>
+            </div>
             <span *ngFor="let c of medChallenges">
-                <span (click)="openChallenge(c.getTitle())">
+                <span (click)="openChallenge(c.getTitle())" class="lesson">
                     {{c.getTitle()}}
                 </span>
                 <br />
@@ -34,10 +58,23 @@
                 <path
                     d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
             </svg>
+            <span class="categories">
+                <span>
+                    <svg *ngIf="arrow3" class="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg>
+                    <svg *ngIf="!arrow3" class="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                    </svg>
+                </span>
+            </span>
         </div>
         <div class="dropdown-content" id="high">
+            <div *ngIf="!isUserPremium" class="lesson not-premium">
+                <span class="pay-btn" (click)="openModal()">Upgrade your Subscription</span>
+            </div>
             <span *ngFor="let c of hardChallenges">
-                <span (click)="openChallenge(c.getTitle())">
+                <span (click)="openChallenge(c.getTitle())" class="lesson">
                     {{c.getTitle()}}
                 </span>
                 <br />
