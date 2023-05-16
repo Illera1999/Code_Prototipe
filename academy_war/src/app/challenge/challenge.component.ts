@@ -31,9 +31,10 @@ export class ChallengeComponent {
             this.challenge[0] = data.getChallenges()[i];
             
             console.log(this.challenge[0].getCode())
-            this.code = this.challenge[0].getCode();
-            //this.code = '#include <stdio.h>\n \tint main() {\n\tprintf(" #### "); \n\t///////Keep printing your C here\n }';
-            
+            let aux = this.challenge[0].getCode().split('\\n');
+            for( let i = 0; i < aux.length; i++){
+              this.code += aux[i] + "\n";
+            }
           }
         }
       }
