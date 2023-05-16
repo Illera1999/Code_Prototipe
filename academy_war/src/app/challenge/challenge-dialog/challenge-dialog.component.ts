@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
@@ -8,9 +8,20 @@ import { ModalService } from 'src/app/services/modal.service';
   styleUrls: ['./challenge-dialog.component.scss']
 })
 export class ChallengeDialogComponent {
-  constructor(private dialog: ModalService){}
+
+  data: string;
+
+  constructor(private dialog: ModalService, @Inject(MAT_DIALOG_DATA) dat: string){ 
+    this.data = dat;
+  }
   
   close() {
     this.dialog.closeDialog();
   }
+
+  // getData() {
+  //   score: any;
+
+  //   score = 1000;
+  // }
 }
