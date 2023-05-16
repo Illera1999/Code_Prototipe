@@ -1,5 +1,5 @@
 .body {
-  height: 100vh;
+  overflow-y: auto;
 }
 
 .rcorners {
@@ -52,9 +52,11 @@ li {
 }
 
 .father {
-  position: relative;
-  display:flex;
+  display: flex;
+  width: 100%;
+  height: fit-content;
   justify-content: space-between;
+  margin: 20px 0;
 }
 
 button {
@@ -68,5 +70,16 @@ button {
 
   &:hover {
     background-color: #7D84B2;
-  } 
+
+  }
+
+  &.left {
+    margin-left: 50px;
+    margin-bottom: 50px;
+  }
+
+  &.right {
+    margin-right: 50px;
+    margin-bottom: 50px;
+  }
 }

@@ -19,7 +19,44 @@ export class ChallengeComponent {
   minutes: number = 0;
   hours: number = 0;
   interval: any;
-  code: string = "";
+  code1 = `
+#include <stdio.h>
+
+int main() {
+    printf("#####");
+    printf("#");
+    printf("#");
+    printf("#");
+    printf("#");
+    printf("#####");
+
+    return 0;
+} 
+  `;
+  code2 = `
+#include <stdio.h>
+
+int main() {
+    int num1, num2, sum;
+
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+
+    sum = num1 + num2;
+
+    if (num1 == num2) {
+        sum *= 3;
+    }
+
+    printf("Sum: %d", sum);
+
+    return 0;
+}  
+  `;
+  code="";
 
   protected description : any;
   constructor(private db: DataCourseFireService, private dialog: ModalService, private router: Router) {
@@ -37,8 +74,9 @@ export class ChallengeComponent {
             this.challenge[0] = data.getChallenges()[i];
           }
         }
+        if (this.challenge[0].getId() == "challenge01") {this.code = this.code1}
+        if (this.challenge[0].getId() == "challenge02") {this.code = this.code2}
       }
-      console.log(this.challenge[0].getCode());
     })
     
     
