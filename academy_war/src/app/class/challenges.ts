@@ -9,6 +9,7 @@ export class Challenge {
     //private durationTime: Date = new Date();
     private score: number;
     private stage: string;
+    private code: string;
 
 
     constructor(datos: any) {
@@ -19,6 +20,7 @@ export class Challenge {
         this.description = data.description;
         this.score = data.score;
         this.stage = data.stage;
+        this.code = data.code;
     }
 
     public getId() { return this.id }
@@ -28,6 +30,7 @@ export class Challenge {
     //public getDurationTime() { return this.durationTime }
     public getScore() { return this.score }
     public getStage() { return this.stage }
+    public getCode() {return this.code}
 
     public setId(id: string) { this.id = id }
     public setTitle(title: string) { this.title = title }
@@ -36,4 +39,5 @@ export class Challenge {
     //public setDurationTime(durationTime: Date) { this.durationTime = durationTime }
     public setScore(score: number) { this.score = score }
     public setStage(stage: Stage) { this.stage = stage }
+    public setCode(code: string) { this.code = code }
 }

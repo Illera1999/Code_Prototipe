@@ -38,6 +38,7 @@ export class ChallengeComponent {
           }
         }
       }
+      console.log(this.challenge[0].getCode());
     })
     
     
