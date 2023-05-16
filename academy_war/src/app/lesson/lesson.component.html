@@ -4,12 +4,13 @@
     <div class='corners' [innerHTML]="lesson[0].getDescription().split('*')[0]"></div>
     <div class='rcorners' [innerHTML]="lesson[0].getDescription().split('*')[1]"></div>
     <div class='lcorners' [innerHTML]="lesson[0].getDescription().split('*')[2]"></div>
+    <div>
+        <button class="button left" (click)="openLesson(beforeLesson[0])">
+            Before Lesson
+        </button>
 
-    <button class="button left" (click)="openLesson(beforeLesson[0])">
-        Before Lesson
-    </button>
-
-    <button class="button right" (click)="openLesson(afterLesson[0])">
-        Next Lesson
-    </button>
+        <button class="button right" (click)="openLesson(afterLesson[0])">
+            Next Lesson
+        </button>
+    </div>
 </div>

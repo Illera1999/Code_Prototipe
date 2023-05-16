@@ -1,6 +1,5 @@
 .body {
   height: 100vh;
-  position: relative;
 }
 
 .rcorners {
@@ -50,6 +49,10 @@ li {
   padding: 20px;
   margin-left: 35%;
   margin-right: 35%;
+}
+
+.father {
+  position: relative;
 }
 
 button {
