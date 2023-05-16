@@ -35,8 +35,8 @@ export class LessonDropdownComponent implements OnInit {
 
   openLesson(id:String) {
     this.router.navigate(['/lesson/', id]);
-    // setTimeout(() => {
-    //   window.location.reload();
-    // }, 1);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1);
   }
 }
