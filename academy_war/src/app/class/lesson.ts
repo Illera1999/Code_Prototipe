@@ -1,10 +1,10 @@
 export class Lesson {
 
-    private id: String;
-    private title: String;
-    private description: String;
-    private stage: String;
-    private userCompleted: String[];
+    private id: string;
+    private title: string;
+    private description: string;
+    private stage: string;
+    private userCompleted: string[];
 
     constructor(datos: any) {
 

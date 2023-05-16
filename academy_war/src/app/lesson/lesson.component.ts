@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../services/auth.service';
-import { ModalService } from '../services/modal.service';
 import { DataCourseFireService } from '../services/data-course-fire.service';
 import { Course } from '../class/course';
 import { Lesson } from '../class/lesson';
@@ -15,13 +13,16 @@ export class LessonComponent {
   course: Course[] = [];
 
   protected lesson: Lesson[] = new Array(1);
-  protected description : any;
+  protected beforeLesson: string[] = []
+  protected afterLesson: string[] = [];
+
+  protected description: any;
   constructor(private db: DataCourseFireService, private router: Router) {
     let lessonName = document.location.href.split("/").pop()?.replaceAll("%20", " ");
-    router.events.subscribe((val) =>{
-      if (val instanceof NavigationStart){
+    router.events.subscribe((val) => {
+      if (val instanceof NavigationStart) {
         window.location.reload();
-      }   
+      }
     });
     db.getParticularCourse("Course C").then((data: Course | null) => {
       if (data != null) {
@@ -30,14 +31,20 @@ export class LessonComponent {
           console.log(data.getLessons()[i].getTitle());
           if (data.getLessons()[i].getTitle() == lessonName) {
             this.lesson[0] = data.getLessons()[i];
+            if (i + 1 <= data.getLessons().length) this.afterLesson.unshift(data.getLessons()[i + 1].getTitle());
+            if (i - 1 >= 0) this.beforeLesson.unshift(data.getLessons()[i - 1].getTitle());
           }
         }
       }
-      // console.log(this.lesson); 
     });
-    console.log(this.course)
-    console.log(this.course.at(0))
-    
+  }
+
+  openLesson(id: string) {
+
+    this.router.navigate(['/lesson/', id]);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1);
   }
 
 }

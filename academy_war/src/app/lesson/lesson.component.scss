@@ -1,5 +1,5 @@
 .body {
-  height: 84vh;
+  height: 100vh;
 }
 
 .rcorners {
@@ -49,4 +49,13 @@ li {
   padding: 20px;
   margin-left: 35%;
   margin-right: 35%;
+}
+
+button {
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: #D9DBF1;
+  font-weight: bold;
+
 }

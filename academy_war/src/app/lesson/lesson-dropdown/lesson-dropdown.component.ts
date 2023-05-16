@@ -25,15 +25,15 @@ export class LessonDropdownComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      console.log(document.location.href);
-      
+    console.log(document.location.href);
+
   }
 
   toggleSideNav() {
     return this.hideSideNav = !this.hideSideNav;
   }
 
-  openLesson(id:String) {
+  openLesson(id: String) {
     this.router.navigate(['/lesson/', id]);
     setTimeout(() => {
       window.location.reload();
