@@ -2,7 +2,7 @@
     border-radius: 25px;
     background: #8E9DCC;
     padding: 20px;    
-    text-align: justify;
+    text-align: center;
     margin-left: 35%;
     margin-right: 35%;
   }
@@ -50,6 +50,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: -600;
 }
 .code {
   width: 900px;

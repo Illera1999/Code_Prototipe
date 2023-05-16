@@ -5,7 +5,7 @@
         <div class='corners' [innerHTML] = "challenge[0].getDescription().split('*')[0]"></div>
         <div class='rcorners' [innerHTML] = "challenge[0].getDescription().split('*')[1]"></div>
         <div class='lcorners' [innerHTML] = "challenge[0].getDescription().split('*')[2]"></div>
-        <h1><ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code" class="code"></ngx-monaco-editor></h1> 
+        <h1><ngx-monaco-editor [options]="editorOptions" [(ngModel)]="this.code" class="code"></ngx-monaco-editor></h1> 
         <span><button (click)="evaluateChallenge()">Corregir</button></span>
     
 </div>
