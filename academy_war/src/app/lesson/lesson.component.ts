@@ -4,6 +4,7 @@ import { ModalService } from '../services/modal.service';
 import { DataCourseFireService } from '../services/data-course-fire.service';
 import { Course } from '../class/course';
 import { Lesson } from '../class/lesson';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lesson',
@@ -16,8 +17,11 @@ export class LessonComponent {
   protected lesson: Lesson[] = new Array(1);
 
   protected description : any;
-  constructor(private db: DataCourseFireService) {
+  constructor(private db: DataCourseFireService, private router: Router) {
     let lessonName = document.location.href.split("/").pop()?.replaceAll("%20", " ");
+    router.events.subscribe((val) =>{
+      window.location.reload() 
+    });
     db.getParticularCourse("Course C").then((data: Course | null) => {
       if (data != null) {
         this.course[0] = data;
