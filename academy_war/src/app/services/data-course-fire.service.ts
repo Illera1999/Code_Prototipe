@@ -3,6 +3,8 @@ import { collection, query, getFirestore, getDocs } from "firebase/firestore";
 import { AuthService } from './auth.service';
 import { Course } from '../class/course';
 import { Lesson } from '../class/lesson';
+import { Challenge } from '../class/challenges';
+import { registerLocaleData } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,7 @@ export class DataCourseFireService {
   private db = getFirestore(AuthService.getApp());
   private courses: Course[] = [];
   private lessons: Lesson[] = [];
+  private challenges: Challenge[] = [];
 
   async setAllCourse() {
     try {
@@ -23,6 +26,11 @@ export class DataCourseFireService {
           const auxe = new Lesson(element);
           this.lessons.push(auxe)
         });
+        let challenges = doc.data()["challenges"];
+        challenges.forEach((element: any) => {
+          const auxe2 = new Challenge(element);
+          this.challenges.push(auxe2)
+        });
 
         const aux = new Course(
           doc.id,
@@ -30,11 +38,13 @@ export class DataCourseFireService {
           doc.data()["description"],
           doc.data()["ProgrammingLanguage"],
           this.lessons,
-          doc.data()["challenges"],
+          this.challenges,
           doc.data()["users"],
-          doc.data()["price"]);
+          doc.data()["price"],);
+
         this.courses.push(aux);
-        this.lessons = [];
+        this.lessons = []
+        this.challenges = []
       });
       console.log("Get collection Course-------------------------------------");
     } catch (e) {
@@ -51,4 +61,5 @@ export class DataCourseFireService {
     });
     return res;
   }
+
 }

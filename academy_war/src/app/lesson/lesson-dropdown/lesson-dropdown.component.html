@@ -1,0 +1,20 @@
+<div class="body">
+    <button  type="button" class="button" (click)="toggleSideNav()">
+        <span class="toggler">
+            <p *ngIf="hideSideNav">
+                >
+            </p>
+            <p *ngIf="!hideSideNav">
+                <
+            </p>
+        </span>
+    </button>
+    <div class="sidebar" [hidden]="!hideSideNav">
+        <ul *ngFor="let l of course?.getLessons()">
+            <span (click)="openLesson(l.getTitle())">
+                <div class="container" [innerHTML] = "l.getTitle()"> </div>
+            </span>
+        </ul>
+    </div>
+</div>
+        

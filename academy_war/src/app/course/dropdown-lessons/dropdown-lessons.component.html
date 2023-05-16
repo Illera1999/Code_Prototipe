@@ -2,7 +2,7 @@
     <div class="dropdown" (click)="openDisplay('low')">
         <h2>Low Level Lessons</h2>
         <div class="dropdown-content displayed" id="low">
-            <span *ngFor="let c of lowLessons" class="lesson">
+            <span *ngFor="let c of lowLessons" (click)="openLesson(c.getTitle())" class="lesson">
                 {{c.getTitle()}}<br />
             </span>
         </div>
@@ -19,9 +19,11 @@
             <div *ngIf="!isUserPremium" class="lesson not-premium">
                 <span class="pay-btn" (click)="openModal()">Upgrade your Subscription</span>
             </div>
-            <span *ngFor="let c of medLessons" class="lesson">
-                {{c.getTitle()}}<br />
-            </span>
+            <div class="dropdown-content displayed" id="medium">
+                <span *ngFor="let c of medLessons" (click)="openLesson(c.getTitle())" class="lesson">
+                    {{c.getTitle()}}<br />
+                </span>
+            </div>
         </div>
     </div>
     <div class="dropdown" (click)="openDisplay('high')">
@@ -35,9 +37,8 @@
         <div class="dropdown-content" id="high">
             <div *ngIf="!isUserPremium" class="lesson not-premium">
                 <span class="pay-btn" (click)="openModal()">Upgrade your Subscription</span>
-            </div>
-            <span *ngFor="let c of hardLessons" class="lesson">
-                {{c.getTitle()}}<br />
+            </div><span *ngFor="let c of hardLessons" (click)="openLesson(c.getTitle())" class="lesson">
+                {{c.getTitle()}} <br />
             </span>
         </div>
     </div>
