@@ -25,6 +25,7 @@ import { ChallengeComponent } from './challenge/challenge.component';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
 import { ChallengeDialogComponent } from './challenge/challenge-dialog/challenge-dialog.component';
 import { ChallengeDropdownComponent } from './challenge/challenge-dropdown/challenge-dropdown.component';
+import { LessonContentComponent } from './lesson/lesson-content/lesson-content.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ChallengeDropdownComponent } from './challenge/challenge-dropdown/chall
     CourseMenuComponent,
     ChallengeComponent,
     ChallengeDialogComponent,
-    ChallengeDropdownComponent
+    ChallengeDropdownComponent,
+    LessonContentComponent
   ],
   imports: [
     BrowserModule,
