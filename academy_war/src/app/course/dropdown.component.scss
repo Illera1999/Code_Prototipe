@@ -25,12 +25,21 @@ h2 {
 }
 
 .lesson {
-    width: 100%;
+    width: calc(100% - 40px);
     height: 75px;
     display: flex;
     align-items: center;
     padding-left: 40px;
+    transition: all .4s ease;
 
+
+    &:hover {
+        background-color: $gray;
+        padding-left: 50px;
+        width: calc(100% - 50px);
+        cursor: pointer;
+        font-weight: bold;
+    }
 }
 
 .displayed {
@@ -53,8 +62,14 @@ h2 {
     position: absolute;
     justify-content: center;
     background-color: rgba($white, .5);
-    padding: 0;
+    padding: 0 20px;
     z-index: 10;
+
+    &:hover {
+        padding: 0 25px;
+        font-weight: bolder;
+
+    }
 }
 
 .pay-btn {
