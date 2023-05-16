@@ -10,7 +10,7 @@
             Before Lesson
         </button>
         <div *ngIf="afterLesson[0] == ''"></div>
-        <button class="button right" (click)="openLesson(afterLesson[0])" *ngIf="afterLesson[0] != ''">
+        <button id="next" class="button right" (click)="openLesson(afterLesson[0])" *ngIf="afterLesson[0] != ''">
             Next Lesson
         </button>
     </div>

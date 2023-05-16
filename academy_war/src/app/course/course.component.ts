@@ -32,7 +32,6 @@ export class CourseComponent {
           this.course[0] = data;
           v = data;
           let user = du.getLocalUserEmail();
-          console.log(user)
           if(user != undefined) {
             ss.isUserSubscribe(user, data.getProgrammingLanguage()).then((e) => {
               if (e) {
