@@ -31,8 +31,8 @@ export class LessonComponent {
           console.log(data.getLessons()[i].getTitle());
           if (data.getLessons()[i].getTitle() == lessonName) {
             this.lesson[0] = data.getLessons()[i];
-            if (i + 1 <= data.getLessons().length) this.afterLesson.unshift(data.getLessons()[i + 1].getTitle());
-            if (i - 1 >= 0) this.beforeLesson.unshift(data.getLessons()[i - 1].getTitle());
+            (i + 1 < data.getLessons().length) ? this.afterLesson.unshift(data.getLessons()[i + 1].getTitle()) : this.afterLesson.unshift("");
+            (i - 1 >= 0) ? this.beforeLesson.unshift(data.getLessons()[i - 1].getTitle()) : this.beforeLesson.unshift("");
           }
         }
       }

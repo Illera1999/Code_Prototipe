@@ -5,11 +5,12 @@
     <div class='rcorners' [innerHTML]="lesson[0].getDescription().split('*')[1]"></div>
     <div class='lcorners' [innerHTML]="lesson[0].getDescription().split('*')[2]"></div>
     <div class="father">
-        <button class="button left" (click)="openLesson(beforeLesson[0])">
+        <div *ngIf="beforeLesson[0] == ''"></div>
+        <button class="button left" (click)="openLesson(beforeLesson[0])" *ngIf="beforeLesson[0] != ''">
             Before Lesson
         </button>
-
-        <button class="button right" (click)="openLesson(afterLesson[0])">
+        <div *ngIf="afterLesson[0] == ''"></div>
+        <button class="button right" (click)="openLesson(afterLesson[0])" *ngIf="afterLesson[0] != ''">
             Next Lesson
         </button>
     </div>
