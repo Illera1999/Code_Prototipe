@@ -4,6 +4,7 @@
     <div class='corners' [innerHTML]="lesson[0].getDescription().split('*')[0]"></div>
     <div class='rcorners' [innerHTML]="lesson[0].getDescription().split('*')[1]"></div>
     <div class='lcorners' [innerHTML]="lesson[0].getDescription().split('*')[2]"></div>
+
     <div class="father">
         <div *ngIf="beforeLesson[0] == ''"></div>
         <button class="button left" (click)="openLesson(beforeLesson[0])" *ngIf="beforeLesson[0] != ''">
