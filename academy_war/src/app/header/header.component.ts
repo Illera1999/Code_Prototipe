@@ -59,6 +59,9 @@ export class HeaderComponent {
     console.log(place);
 
     this.router.navigate(["/course/" + place]);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1);
   }
 
 }
