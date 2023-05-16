@@ -29,6 +29,7 @@ h2 {
     height: 75px;
     display: flex;
     align-items: center;
+    padding-left: 40px;
 
 }
 
@@ -72,4 +73,14 @@ h2 {
         font-weight: bold;
         background-color: rgba($light-golden, .5);
     }
+}
+
+.categories {
+    margin-left: 25px;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    color: white;
 }

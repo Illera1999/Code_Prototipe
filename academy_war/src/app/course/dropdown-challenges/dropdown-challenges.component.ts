@@ -24,7 +24,7 @@ export class DropdownChallengesComponent {
   constructor(private db: DataCourseFireService,
     private user: DataUserFireService,
     private subs: SubscriptionService, protected router: Router) {
-    this.isUserSubscripted();
+    /* this.isUserSubscripted(); */
   }
 
   ngOnInit(): void {
@@ -55,14 +55,14 @@ export class DropdownChallengesComponent {
     element?.classList.toggle("displayed");
   }
 
-  isUserSubscripted() {
+  /* isUserSubscripted() {
     let user = this.user.getLocalUserEmail();
     console.log(user);
     this.subs.getSubscriptionFromUser(user['email'])
     if (user) {
       this.isUserPremium = false;
     }
-  }
+  } */
 
   openChallenge(id: String) {
     this.router.navigate(['/challenge/' + id])
