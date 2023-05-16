@@ -14,7 +14,7 @@ import { ChallengeDialogComponent } from './challenge-dialog/challenge-dialog.co
 export class ChallengeComponent {
   course: Course[] = [];
   challenge: Challenge[] = new Array(1);
-
+  code: string = "";
   protected description : any;
   constructor(private db: DataCourseFireService, private dialog: ModalService) {
     let challengeName = document.location.href.split("/").pop()?.replaceAll("%20", " ");
@@ -24,6 +24,8 @@ export class ChallengeComponent {
         for (let i = 0; i < data.getChallenges().length; i++) {
           if (data.getChallenges()[i].getTitle() == challengeName) {
             this.challenge[0] = data.getChallenges()[i];
+            this.code = this.challenge[0].getCode();
+            console.log(this.challenge[0])
           }
         }
       }
@@ -33,7 +35,7 @@ export class ChallengeComponent {
   }
 
   editorOptions = { theme: 'vs-dark', language: 'c' };
-  code: string = '#include <stdio.h>\n\tint main() {\n\tprintf("Hello World!"); \n\treturn 0;\n }';
+ 
 
   evaluateChallenge(){
   

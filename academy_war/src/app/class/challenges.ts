@@ -27,6 +27,7 @@ export class Challenge {
     public getDescription() { return this.description }
     public getScore() { return this.score }
     public getStage() { return this.stage }
+    public getCode() { return this.code }
 
     public setId(id: string) { this.id = id }
     public setTitle(title: string) { this.title = title }
