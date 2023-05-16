@@ -5,7 +5,10 @@ import { Course } from 'src/app/class/course';
 import { Stage } from 'src/app/class/stage';
 import { DataCourseFireService } from 'src/app/services/data-course-fire.service';
 import { DataUserFireService } from 'src/app/services/data-user-fire.service';
+import { ModalService } from 'src/app/services/modal.service';
 import { SubscriptionService } from 'src/app/services/subscription.service';
+import { PayModalComponent } from '../pay-modal/pay-modal.component';
+import { LoginComponent } from 'src/app/login/login.component';
 
 @Component({
   selector: 'app-dropdown-challenges',
@@ -16,6 +19,7 @@ export class DropdownChallengesComponent {
   lowChallenges: Challenge[] = [];
   medChallenges: Challenge[] = [];
   hardChallenges: Challenge[] = [];
+  course: Course | undefined;
 
   pl = "";
 
@@ -23,23 +27,22 @@ export class DropdownChallengesComponent {
 
   constructor(private db: DataCourseFireService,
     private user: DataUserFireService,
-    private subs: SubscriptionService, protected router: Router) {
-    this.isUserSubscripted();
-  }
+    private modal: ModalService,
+    private subs: SubscriptionService,
+    protected router: Router) { }
 
   ngOnInit(): void {
     let courseUrl = document.location.href.split("/").pop()?.replace("%20", " ");
     this.db.getParticularCourse(courseUrl || "")
       .then((data: Course | null) => {
         if (data != null) {
+          this.course = data;
+          this.pl = data.getProgrammingLanguage();
+          let mail = this.user.getLocalUserEmail();
+          this.subs.isUserSubscribe(mail, this.pl).then((data: any) => {
+            this.isUserPremium = data;
+          });
           data.getChallenges().forEach((c: Challenge) => {
-            this.pl = data.getProgrammingLanguage();
-            let mail = this.user.getLocalUserEmail();
-            this.subs.isUserSubscribe(mail, this.pl).then((data: any) => {
-              this.isUserPremium = data;
-              console.log(this.isUserPremium);
-
-            });
             switch (c.getStage()) {
               case Stage.LOW: this.lowChallenges.push(c); break;
               case Stage.MEDIUM: this.medChallenges.push(c); break;
@@ -55,13 +58,10 @@ export class DropdownChallengesComponent {
     element?.classList.toggle("displayed");
   }
 
-  isUserSubscripted() {
+  openModal() {
     let user = this.user.getLocalUserEmail();
-    console.log(user);
-    this.subs.getSubscriptionFromUser(user['email'])
-    if (user) {
-      this.isUserPremium = false;
-    }
+    if (!user) this.modal.openDialog(LoginComponent, "500px", "600px");
+    else this.modal.openDialog(PayModalComponent, "500px", "600px", this.course);
   }
 
   openChallenge(id: String) {

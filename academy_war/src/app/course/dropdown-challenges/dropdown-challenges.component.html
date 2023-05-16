@@ -2,10 +2,8 @@
     <div class="dropdown" (click)="openDisplay('low')">
         <h2>Low Level Challenges</h2>
         <div class="dropdown-content displayed" id="low">
-            <span *ngFor="let c of lowChallenges">
-                <span (click)="openChallenge(c.getTitle())">
-                    {{c.getTitle()}}
-                </span>
+            <span *ngFor="let c of lowChallenges" (click)="openChallenge(c.getTitle())" class="lesson">
+                {{c.getTitle()}}
                 <br />
             </span>
         </div>
@@ -19,8 +17,11 @@
             </svg>
         </div>
         <div class="dropdown-content" id="mid">
+            <div *ngIf="!isUserPremium" class="lesson not-premium">
+                <span class="pay-btn" (click)="openModal()">Upgrade your Subscription</span>
+            </div>
             <span *ngFor="let c of medChallenges">
-                <span (click)="openChallenge(c.getTitle())">
+                <span (click)="openChallenge(c.getTitle())" class="lesson">
                     {{c.getTitle()}}
                 </span>
                 <br />
@@ -36,8 +37,11 @@
             </svg>
         </div>
         <div class="dropdown-content" id="high">
+            <div *ngIf="!isUserPremium" class="lesson not-premium">
+                <span class="pay-btn" (click)="openModal()">Upgrade your Subscription</span>
+            </div>
             <span *ngFor="let c of hardChallenges">
-                <span (click)="openChallenge(c.getTitle())">
+                <span (click)="openChallenge(c.getTitle())" class="lesson">
                     {{c.getTitle()}}
                 </span>
                 <br />
