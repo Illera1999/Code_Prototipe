@@ -11,7 +11,8 @@ export class ModalService {
   openDialog(component: any, heigh?: string, width?: string, data?: any) {
     this.dialog.open(component, {
       height: heigh,
-      width: width
+      width: width,
+      data: data
     });
   }
 

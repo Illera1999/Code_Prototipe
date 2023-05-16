@@ -29,7 +29,9 @@ export class DataUserFireService {
   }
 
   getLocalUserEmail() {
-    return JSON.parse(localStorage.getItem("user") || "")['id'];
+    let stg = localStorage.getItem("user")
+    if (stg) return JSON.parse(stg)['id']
+    return undefined;
   }
 
   getUser() {

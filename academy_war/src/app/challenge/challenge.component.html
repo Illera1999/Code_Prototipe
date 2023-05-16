@@ -1,0 +1,11 @@
+<div>
+
+        <app-challenge-dropdown class="dropdown"></app-challenge-dropdown>
+        <div class="container" [innerHTML] = "challenge[0].getTitle()"> </div>
+        <div class='corners' [innerHTML] = "challenge[0].getDescription().split('*')[0]"></div>
+        <div class='rcorners' [innerHTML] = "challenge[0].getDescription().split('*')[1]"></div>
+        <div class='lcorners' [innerHTML] = "challenge[0].getDescription().split('*')[2]"></div>
+        <h1><ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code" class="code"></ngx-monaco-editor></h1> 
+        <span><button (click)="evaluateChallenge()">Corregir</button></span>
+    
+</div>

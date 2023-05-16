@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { subscribeOn } from 'rxjs';
+import { Router } from '@angular/router';
 import { Challenge } from 'src/app/class/challenges';
 import { Course } from 'src/app/class/course';
 import { Stage } from 'src/app/class/stage';
@@ -23,7 +23,7 @@ export class DropdownChallengesComponent {
 
   constructor(private db: DataCourseFireService,
     private user: DataUserFireService,
-    private subs: SubscriptionService) {
+    private subs: SubscriptionService, protected router: Router) {
     this.isUserSubscripted();
   }
 
@@ -62,5 +62,9 @@ export class DropdownChallengesComponent {
     if (user) {
       this.isUserPremium = false;
     }
+  }
+
+  openChallenge(id: String) {
+    this.router.navigate(['/challenge/' + id])
   }
 }

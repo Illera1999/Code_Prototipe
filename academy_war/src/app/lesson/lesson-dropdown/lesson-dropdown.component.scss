@@ -1,0 +1,58 @@
+.sidebar{
+    padding: 10px;
+    width: fit-content;
+    background-color: #19191a;
+    transition: width 0.3s;
+    height: 600px;
+    border-radius: 25px;
+}
+.body {
+    top: 10vh;
+    bottom: 10vh;
+    right: 0;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    float: right;
+}
+
+.button {
+    width: 50px;
+    height: 60px;
+    position:relative;
+    right: inherit;
+    background: #19191a;
+    border-radius: 25px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.sidebar ul {
+    padding: 15px;
+    display: block;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+    }
+}
+
+.toggler {
+    font-size:xx-large;
+    color: white;
+}
+
+.container {
+    background: #a1a2aa;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 25px;
+    
+}
+
+li{
+    color:aliceblue;
+}
+

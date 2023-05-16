@@ -4,9 +4,9 @@ import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { User } from '../class/user';
 import { AuthService } from '../services/auth.service';
-import { DataCourseFireService } from '../services/data-course-fire.service';
-import { Course } from '../class/course';
 import { Router } from '@angular/router';
+import { Course } from '../class/course';
+import { DataCourseFireService } from '../services/data-course-fire.service';
 
 @Component({
   selector: 'app-header',
@@ -56,6 +56,9 @@ export class HeaderComponent {
   }
 
   openCourse(place: string) {
+    console.log(place);
+
+    this.router.navigate(["/course/" + place]);
     this.router.navigate(["/course/" + place]);
   }
 
