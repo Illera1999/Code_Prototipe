@@ -33,6 +33,7 @@ export class CourseComponent {
     this.show = e;
   }
 
+
 }
 export interface vMenu {
   description: boolean,

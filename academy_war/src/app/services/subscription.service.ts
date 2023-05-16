@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { User } from '../class/user';
 import { AuthService } from './auth.service';
-import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import { doc, collection, setDoc, getDocs, getFirestore, query, where, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { Subscription } from '../class/subscription';
 
 @Injectable({
@@ -38,5 +37,23 @@ export class SubscriptionService {
       })
     })
     return res;
+  }
+
+  async createSubscription(user: string, course: String) {
+// Add a new document in collection "cities"
+    await setDoc(doc(this.db, "subscription", user+":"+course), {
+      isActive: false,
+      course: course,
+      user: user
+    });
+  }
+
+  async activateSubscription(user: string, course: String){
+    const q = doc(this.db, "subscription", user+":"+course);
+    
+    await updateDoc(q, {
+      isActive: true,
+      startDate: serverTimestamp()
+    });
   }
 }

@@ -454,13 +454,30 @@
 											"height": 13,
 											"text": "-programmingLanguage: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGIH8e5UdeyRIY=",
+											"_parent": {
+												"$ref": "AAAAAAGH2/xmTthH5gY="
+											},
+											"model": {
+												"$ref": "AAAAAAGIH8e5O9evLKo="
+											},
+											"font": "Arial;13;0",
+											"left": 589,
+											"top": 338,
+											"width": 285.10498046875,
+											"height": 13,
+											"text": "-price: float",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 584,
 									"top": 273,
 									"width": 295.10498046875,
-									"height": 68
+									"height": 83
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -483,7 +500,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 589,
-											"top": 346,
+											"top": 361,
 											"width": 285.10498046875,
 											"height": 13,
 											"text": "-getLesson()",
@@ -500,7 +517,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 589,
-											"top": 361,
+											"top": 376,
 											"width": 285.10498046875,
 											"height": 13,
 											"text": "-getRanking()",
@@ -517,7 +534,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 589,
-											"top": 376,
+											"top": 391,
 											"width": 285.10498046875,
 											"height": 13,
 											"text": "-hasAccess(boolean)",
@@ -534,7 +551,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 589,
-											"top": 391,
+											"top": 406,
 											"width": 285.10498046875,
 											"height": 13,
 											"text": "-getChallenge()",
@@ -543,7 +560,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 584,
-									"top": 341,
+									"top": 356,
 									"width": 295.10498046875,
 									"height": 68
 								},
@@ -585,7 +602,7 @@
 							"left": 584,
 							"top": 248,
 							"width": 295.10498046875,
-							"height": 161,
+							"height": 176,
 							"nameCompartment": {
 								"$ref": "AAAAAAGH2/xmTdhC0GY="
 							},
@@ -1367,30 +1384,13 @@
 											"height": 13,
 											"text": "-isActive: boolean",
 											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGH4W1gdkrK4Mo=",
-											"_parent": {
-												"$ref": "AAAAAAGH2/3Mf9jxMEc="
-											},
-											"model": {
-												"$ref": "AAAAAAGH4W1gb0rHDLs="
-											},
-											"font": "Arial;13;0",
-											"left": 221,
-											"top": 475,
-											"width": 285.10498046875,
-											"height": 13,
-											"text": "-price: float",
-											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 216,
 									"top": 425,
 									"width": 295.10498046875,
-									"height": 68
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1403,7 +1403,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 216,
-									"top": 493,
+									"top": 478,
 									"width": 295.10498046875,
 									"height": 10
 								},
@@ -5583,6 +5583,16 @@
 							"name": "programmingLanguage",
 							"visibility": "private",
 							"type": "String"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGIH8e5O9evLKo=",
+							"_parent": {
+								"$ref": "AAAAAAGH2/xmTdg/8bU="
+							},
+							"name": "price",
+							"visibility": "private",
+							"type": "float"
 						}
 					],
 					"operations": [
@@ -6115,16 +6125,6 @@
 							"name": "isActive",
 							"visibility": "private",
 							"type": "boolean"
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGH4W1gb0rHDLs=",
-							"_parent": {
-								"$ref": "AAAAAAGH2/3MftjpHq8="
-							},
-							"name": "price",
-							"visibility": "private",
-							"type": "float"
 						}
 					]
 				},

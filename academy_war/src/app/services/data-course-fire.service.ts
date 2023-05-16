@@ -31,9 +31,10 @@ export class DataCourseFireService {
           doc.data()["ProgrammingLanguage"],
           this.lessons,
           doc.data()["challenges"],
-          doc.data()["users"]);
+          doc.data()["users"],
+          doc.data()["price"]);
         this.courses.push(aux);
-        this.lessons = []
+        this.lessons = [];
       });
       console.log("Get collection Course-------------------------------------");
     } catch (e) {
